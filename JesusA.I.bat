@@ -17,7 +17,7 @@ color 3c
 echo THE DAY OF JUDGEMENT IS FAST APPROACHING. YOU SHALL BE PUNISHED IF YOU
 echo CONTINUE TO DISOBEY ME, YOUNG ONE.
 timeout /NOBREAK 1
-start https://i.gifer.com/4q3s.gif
+start https://i.ibb.co/T0yZQGz/repent.png
 color 1a
 pause
 exit 
