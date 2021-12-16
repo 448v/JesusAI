@@ -1,4 +1,4 @@
-# Created by Ewan Fergie & Jack Archibald, c C0rp Industries 2021
+# Created by @download_free_ram69 & @ScoopyScrap, c C0rp Industries 2021
 
 Made using state of the art blockchain technology
 Not affiliated with God, Jesus or The Bible in any way.
