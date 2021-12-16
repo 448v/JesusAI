@@ -1,5 +1,5 @@
 ::Alpha branch created by @ScoopyScrap
-::Slightly optimized
+::Very optimized
 ::Works in Powershell, Command Prompt or ran from the directory 
 
 @echo off
@@ -29,6 +29,9 @@ echo[
 echo Copyright 2021 C0rp Industries
 echo Current version: v00.01 (Private Development Build)
 
+::Easier to manage options menu
+::DON'T MESS AROUND WITH THIS IF YOU DON'T KNOW WHAT TO FUCKING DO
+
 set /p "menu2=Selected option: "
 if "%menu2%" equ "secret" goto judgement
 if "%menu2%" equ "7" start "" https://i.imgur.com/DCtv3fR.gif
@@ -36,7 +39,7 @@ if "%menu2%" equ "6" goto jesusinfo
 if "%menu2%" equ "5" goto directorylist
 if "%menu2%" equ "4" goto credits
 if "%menu2%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
-if "%menu2%" equ "2" goto jdasiodhasioudhuiwaheuih
+if "%menu2%" equ "2" exit
 if "%menu2%" equ "1" goto jesusai
 
 :directorylist
@@ -201,7 +204,7 @@ echo %random% %random% %random% %random% %random% %random% %random% %random% %ra
 echo %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% 
 goto error
 timeout /NOBREAK 5
-goto 8213ahiodohi
+exit
 
 
 
@@ -268,9 +271,9 @@ set /p "hell=Answer: "
 if "%hell%" equ "YES" goto hellpart2
 if "%hell%" equ "yes" goto hellpart2
 if "%hell%" equ "Yes" goto hellpart2
-if "%hell%" equ "NO" goto ijajiosaf
-if "%hell%" equ "no" goto ijajiosaf
-if "%hell%" equ "No" goto ijajiosaf
+if "%hell%" equ "NO" exit
+if "%hell%" equ "no" exit
+if "%hell%" equ "No" exit
 
 :hellpart2
 cls
