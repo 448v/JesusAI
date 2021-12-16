@@ -3,7 +3,7 @@
 ::Works in Powershell, Command Prompt or ran from the directory 
 
 @echo off
-title JesusAI (Early Access)
+title JesusAI v00.01 (Development Build)
 :menu
 color 0e
 cls
@@ -17,9 +17,9 @@ echo //***** //****** ****** //****** ****** /**     /**/**
 echo  /////   ////// //////   ////// //////  //      // // 
 echo[
 color 0e
-echo Welcome to the Alpha branch of JesusAI.
+echo Welcome to the Alpha build of JesusAI.
 echo Please select an option.
-echo 1. Start Beta Experience
+echo 1. Start Alpha Experience
 echo 2. Close Experience
 echo 3. Load GitHub Repository Page
 echo 4. Credits
@@ -64,8 +64,8 @@ echo 8. Hell
 echo 9. Directory List
 echo[
 set /p "directories=Directory you want to travel to: "
-if "%directories%" equ "9" goto directorylist
-if "%directories%" equ "8" goto hell
+if "%directories%" equ "9" goto directorylist   
+if "%directories%" equ "8" goto payloadtohell
 if "%directories%" equ "7" goto payloadtoerror
 if "%directories%" equ "6" goto hello
 if "%directories%" equ "5" goto jesusai
@@ -175,11 +175,11 @@ echo               .@       ,, $@$.($                @    .$@(  $,  .@,
 echo                 //    .(      ,$@@@$$/,.     ,($@@@$,      @  $@.              
 echo                  @  .@.                                  @. .@@                
 echo                 ,/$.                                    $  @, @                                   
-echo (your text) Ask Jesus a question.
+echo 1. (your text) Ask Jesus a question.
 echo 2. Beg for forgiveness.
 echo 3. Escape.
 echo[
-echo CURRENT PROMPTS TO ASK JESUS (CASE SENSITIVE!)
+echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
 echo[
 set /p "jesusai=Selected option: "
@@ -191,7 +191,7 @@ if "%jesusai%" equ "3" goto payloadtoerror
 if "%jesusai%" equ "2" goto judgement
 
 :payloadtoerror
-@echo>"C:\Desktop\unknown.txt
+@echo>"C:\Desktop\unknown.txt"
 @echo I CAN SEE YOU, %USERNAME%. HAVE YOU SINNED? > unknown.txt
 cls
 goto error
@@ -200,6 +200,8 @@ goto error
 echo %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random%   
 echo %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% 
 goto error
+timeout /NOBREAK 5
+goto 8213ahiodohi
 
 
 
@@ -223,31 +225,28 @@ echo                 I
 echo                 I
 echo                 I
 echo[
-echo (your text) Ask Jesus a question.
+echo 1. (your text) Ask Jesus a question.
 echo 2. Beg for forgiveness.
 echo 3. Escape.
+echo 4. ?̶̋̓͛̂͌͆͝
 echo[
-echo CURRENT PROMPTS TO ASK JESUS (CASE SENSITIVE!)
+echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
 
-set /p hello=
-if '%hello%'=='2' (
+set /p "hello=Selected option: "
+if "%hello%" equ "4" goto payloadtohell
+if "%hello%" equ "3" goto payloadtoerror
+if "%hello%" equ "2" goto judgement
+if "%hello%" equ "hi" goto hello
+if "%hello%" equ "Hi" goto hello
+if "%hello%" equ "hello" goto hello
+if "%hello%" equ "Hello" goto hello
+
+:payloadtohell
+cls
+@echo>"C:\Desktop\nightmare.txt"
+@echo ඞ > unknown.txt
 goto hell
-)
-
-if '%hello%'=='3' (
-@echo off
-
-@echo>"C:\Desktop\unknown.txt
-@echo Hello %USERNAME%, I can see you. > unknown.txt
-)
-if '%hello%'=='3' (
-goto error
-color 0a
-)
-
-echo %hello%|findstr /i "\<Hello\>" >nul && goto hello || goto jesusai
-pause
 
 :hell
 cls
@@ -259,23 +258,37 @@ echo[
 echo Your computer's IP information:
 ipconfig |find "ipv4" /i
 echo[
-echo JesusAI's current directory is:
-echo %CD%
-echo[
 echo JesusAI has now gathered information about your current location.
 echo %USERNAME%, you have one chance to redeem yourself before I take over your computer.
 echo Answer my riddles three, and you shall be granted immunity.
 echo Do you understand?
 echo[
 echo Answer with either YES or NO.
-set /p hell=
-echo %hell%|findstr /i "\<YES\>" >nul && goto hellpart2 || goto 
+set /p "hell=Answer: "
+if "%hell%" equ "YES" goto hellpart2
+if "%hell%" equ "yes" goto hellpart2
+if "%hell%" equ "Yes" goto hellpart2
+if "%hell%" equ "NO" goto ijajiosaf
+if "%hell%" equ "no" goto ijajiosaf
+if "%hell%" equ "No" goto ijajiosaf
 
 :hellpart2
 cls
 echo Glad you agreed to my riddles.
 echo Riddle 1:
-echo This is a test!
-set /p riddle1=
-echo %riddle1%|findstr /i "\<Test\>" >nul && goto menu || goto 
-pause
+echo What was the first word (excluding ASCII text images) of JesusAI's main menu?
+echo[
+echo Option 1: Jesus
+echo Option 2: Welcome
+echo Option 3: Hello
+set /p "hellpart2=Answer: "
+if "%hellpart2%" equ "Jesus" goto payloadtoerror
+if "%hellpart2%" equ "jesus" goto payloadtoerror
+if "%hellpart2%" equ "Hello" goto payloadtoerror
+if "%hellpart2%" equ "hello" goto payloadtoerror
+if "%hellpart2%" equ "Welcome" goto hellpart3
+if "%hellpart2%" equ "welcome" goto hellpart3
+
+:hellpart3
+cls
+echo This is not done yet.
