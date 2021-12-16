@@ -17,15 +17,37 @@ echo Welcome to the Alpha branch of JesusAI.
 echo Please select an option.
 echo 1. Start Beta Experience
 echo 2. Close Experience
-echo 3. Credits
-echo 4. Load GitHub Repository Page
+echo 3. Load GitHub Repository Page
+echo 4. Credits
 echo[
 echo Copyright 2021 C0rp Industries
 echo Current version: v00.01 (Private Development Build)
-set /p menu=
-if '%menu%'=='1' (
-goto jesusai
+
+set /p "menu2=Selected option: "
+if "%menu2%" equ "4" goto credits
+if "%menu2%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI" (
+goto menu
 )
+if "%menu2%" equ "2" exit
+if "%menu2%" equ "1" goto jesusai
+
+:credits
+cls
+echo Created by C0rp Industries
+echo Code written by @ScoopyScrap and @download_free_ram69 on Instagram
+echo Project concept established in 2019
+echo Repository hosted on GitHub
+echo[
+echo Return to Main Menu? YES / NO
+set /p "credits=Response: "
+if "%credits%" equ "YES" goto menu
+if "%credits%" equ "yes" goto menu
+if "%credits%" equ "Yes" goto menu
+if "%credits%" equ "NO" goto credits
+if "%credits%" equ "no" goto credits
+if "%credits%" equ "No" goto credits
+
+
 if '%menu%'=='6' (
 cls
 color 3c
@@ -37,15 +59,10 @@ color 1a
 pause
 exit 
 )
-if '%menu%'=='3'
 
-if '%menu%'=='4' (
-start "" http://github.com/JesusAIexperience/JesusAI
-)
+echo %menu%|findstr /i "\<4\>" >nul && goto github || goto menu
 
-if /i=='5' (
-start https://i.gifer.com/4q3s.gif
-)
+
 
 if '%menu%'=='2' (
 exit
