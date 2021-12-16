@@ -1,7 +1,7 @@
 @echo off
 title JesusAI (Early Access)
 :menu
-color 0d
+color 0e
 cls
 echo       **                                     **     **
 echo      /**                                    ****   /**
@@ -12,7 +12,7 @@ echo  **  /**/**////  /////**/**  /** /////**/**//////**/**
 echo //***** //****** ****** //****** ****** /**     /**/**
 echo  /////   ////// //////   ////// //////  //      // // 
 echo[
-color 0d
+color 0e
 echo Welcome to the Alpha branch of JesusAI.
 echo Please select an option.
 echo 1. Start Beta Experience
@@ -24,11 +24,11 @@ echo Copyright 2021 C0rp Industries
 echo Current version: v00.01 (Private Development Build)
 
 set /p "menu2=Selected option: "
+if "%menu2%" equ "6" goto judgement
+if "%menu2%" equ "5" start "" https://i.imgur.com/DCtv3fR.gif
 if "%menu2%" equ "4" goto credits
-if "%menu2%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI" (
-goto menu
-)
-if "%menu2%" equ "2" exit
+if "%menu2%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
+if "%menu2%" equ "2" goto jdasiodhasioudhuiwaheuih
 if "%menu2%" equ "1" goto jesusai
 
 :credits
@@ -47,26 +47,15 @@ if "%credits%" equ "NO" goto credits
 if "%credits%" equ "no" goto credits
 if "%credits%" equ "No" goto credits
 
-
-if '%menu%'=='6' (
+:judgement
 cls
-color 3c
+color 4f
 echo THE DAY OF JUDGEMENT IS FAST APPROACHING. YOU SHALL BE PUNISHED IF YOU
 echo CONTINUE TO DISOBEY ME, YOUNG ONE.
-timeout /NOBREAK 1
 start "" http://i.ibb.co/T0yZQGz/repent.png
-color 1a
 pause
-exit 
-)
-
-echo %menu%|findstr /i "\<4\>" >nul && goto github || goto menu
-
-
-
-if '%menu%'=='2' (
 exit
-)else goto menu
+
 :jesusai
 cls 
 color 0c
