@@ -22,7 +22,7 @@ echo[
 color 0b
 echo Welcome to the Alpha build of JesusAI.
 echo Please select an option.
-echo 1. Start Alpha Experience
+echo 1. Start The Experience
 echo 2. Close Experience
 echo 3. Load GitHub Repository Page
 echo 4. Credits
@@ -36,7 +36,7 @@ echo[
 set /p "menu2=Selected option: "
 if "%menu2%" equ "enable.debug" goto debugmenu
 if "%menu2%" equ "secret" goto judgement
-if "%menu2%" equ "5" start "" https://i.imgur.com/DCtv3fR.gif
+if "%menu2%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
 if "%menu2%" equ "4" goto credits
 if "%menu2%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
 if "%menu2%" equ "2" exit
@@ -61,12 +61,13 @@ echo Enter "disable.debug" to disable debug options.
 echo[
 echo Welcome to the Alpha build of JesusAI.
 echo Please select an option.
-echo 1. Start Alpha Experience
+echo 1. Start The Experience
 echo 2. Close Experience
 echo 3. Load GitHub Repository Page
 echo 4. Credits
 echo 5. (DEBUG) List Directories
 echo 6. (DEBUG) JesusAI Info
+echo 7. (DEBUG) List All Embedded Content
 echo[
 echo Copyright 2021 C0rp Industries
 echo Current version: v00.01 (Private Development Build)
@@ -80,7 +81,8 @@ echo[
 set /p "menudebug=Selected option: "
 if "%menudebug%" equ "disable.debug" goto menu
 if "%menudebug%" equ "secret" goto judgement
-if "%menudebug%" equ "7" start "" https://i.imgur.com/DCtv3fR.gif
+if "%menudebug%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
+if "%menudebug%" equ "7" goto content
 if "%menudebug%" equ "6" goto jesusinfo
 if "%menudebug%" equ "5" goto directorylist
 if "%menudebug%" equ "4" goto credits
@@ -88,6 +90,45 @@ if "%menudebug%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
 if "%menudebug%" equ "2" exit
 if "%menudebug%" equ "1" goto jesusai
 goto debugmenu
+
+:content
+cls
+echo  ******** ****     **** ******   ******** *******   *******   ******** *******  
+echo /**///// /**/**   **/**/*////** /**///// /**////** /**////** /**///// /**////** 
+echo /**      /**//** ** /**/*   /** /**      /**    /**/**    /**/**      /**    /**
+echo /******* /** //***  /**/******  /******* /**    /**/**    /**/******* /**    /**
+echo /**////  /**  //*   /**/*//// **/**////  /**    /**/**    /**/**////  /**    /**
+echo /**      /**   /    /**/*    /**/**      /**    ** /**    ** /**      /**    ** 
+echo /********/**        /**/******* /********/*******  /*******  /********/*******  
+echo //////// //         // ///////  //////// ///////   ///////   //////// ///////   
+echo[
+echo    ******    *******   ****     ** ********** ******** ****     ** **********
+echo   **////**  **/////** /**/**   /**/////**/// /**///// /**/**   /**/////**/// 
+echo  **    //  **     //**/**//**  /**    /**    /**      /**//**  /**    /**    
+echo /**       /**      /**/** //** /**    /**    /******* /** //** /**    /**    
+echo /**       /**      /**/**  //**/**    /**    /**////  /**  //**/**    /**    
+echo //**    **//**     ** /**   //****    /**    /**      /**   //****    /**    
+echo  //******  //*******  /**    //***    /**    /********/**    //***    /**    
+echo   //////    ///////   //      ///     //     //////// //      ///     //     
+echo[
+echo This page shows all links + images used in JesusAI.
+echo This will be updated periodically as new content is added.
+echo This is to ensure everything works correctly.
+echo[
+echo CONTENT LIST:
+echo 1. Secret Jesus Gif (in Main Menu)
+echo 2. GitHub Repository
+echo 3. Ominous Jesus Photo (in Judgement)
+echo[
+echo Type "back" to go back.
+set /p "embedded=Selected option: "
+if "%embedded%" equ "back" goto debugmenu
+if "%embedded%" equ "3" start "" http://i.ibb.co/T0yZQGz/repent.png
+if "%embedded%" equ "2" start "" "https://github.com/JesusAIexperience/JesusAI"
+if "%embedded%" equ "1" start "" https://i.imgur.com/DCtv3fR.gif
+goto content
+
+
 
 
 
@@ -145,19 +186,14 @@ echo Code written by @ScoopyScrap and @download_free_ram69 on Instagram
 echo Project concept established in 2019
 echo Repository hosted on GitHub
 echo[
-echo Return to Main Menu? YES / NO
+echo Type "back" to go back.
 set /p "credits=Response: "
-if "%credits%" equ "YES" goto menu
-if "%credits%" equ "yes" goto menu
-if "%credits%" equ "Yes" goto menu
-if "%credits%" equ "NO" goto credits
-if "%credits%" equ "no" goto credits
-if "%credits%" equ "No" goto credits
+if "%credits%" equ "back" goto menu
 goto credits
 
 :jesusinfo
 cls
-echo ** ****     ** ********   *******  
+echo  ** ****     ** ********   *******  
 echo /**/**/**   /**/**/////   **/////** 
 echo /**/**//**  /**/**       **     //**
 echo /**/** //** /**/******* /**      /**
@@ -167,17 +203,16 @@ echo /**/**    //***/**       //*******
 echo // //      /// //         ///////   
 echo[
 echo JesusAI's current directory is:
-echo echo %CD%
+echo %CD%
 echo[
 echo The current date and time the program is being run on is:
 echo %date% %time%
 echo[
 echo This copy of JesusAI's version is:
 echo v00.01 (Private Development Build)
-echo Press "Y" to go back.
+echo Type "back" to go back.
 set /p "jesusinfo2=Selected option: "
-if "%jesusinfo2%" equ "Y" goto debugmenu
-if "%jesusinfo2%" equ "y" goto debugmenu
+if "%jesusinfo2%" equ "back" goto debugmenu
 goto jesusinfo
 
 :judgement
@@ -290,6 +325,7 @@ echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
 
 set /p "hello=Selected option: "
+if "%hello%" equ "print(inject.bypass.js)" goto hellunused
 if "%hello%" equ "4" goto payloadtohell
 if "%hello%" equ "3" goto payloadtoerror
 if "%hello%" equ "2" goto judgement
