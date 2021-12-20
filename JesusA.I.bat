@@ -1,11 +1,11 @@
 ::Alpha branch created by @ScoopyScrap
 ::Very optimized
 ::Works in Powershell, Command Prompt or ran from the directory 
-::17/12/21: Command Prompt may be unstable and crash more than Powershell
+::20/12/21: Command Prompt may be unstable and crash more than Powershell
 
 
 @echo off
-title JesusAI v00.01 (Development Copy)
+title JesusAI 00.01 (Development Copy)
 
 :menu
 color 0b
@@ -398,4 +398,25 @@ goto hellpart3
 
 :hellpart4
 cls
-echo Work in progress!
+echo You're doing well, %USERNAME%. Your final riddle:
+echo Do you consent to the 2500 page JesusAI terms and conditions?
+echo (You cannot read them.)
+echo[
+echo Option 1: Yes
+echo Option 2: No
+set /p "hellpart4=Answer: "
+if "%hellpart4%" equ "2" goto payloadtoerror
+if "%hellpart4%" equ "1" goto hellfinale
+goto hellpart4
+
+:hellfinale
+cls
+echo You have answered all 3 riddles correctly, %USERNAME%.
+echo Your computer's information is safe.
+echo Type "return" to close JesusAI.
+echo[
+color 0f
+echo RIDDLE ENDING
+set /p "hellfinale=Response: "
+if "%hellfinale%" equ "return" goto menu
+goto hellfinale
