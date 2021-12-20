@@ -8,7 +8,7 @@
 title JesusAI 00.01 (Development Copy)
 
 :menu
-color 0b
+color 0a
 cls
 echo       **                                     **     **
 echo      /**                                    ****   /**
@@ -19,7 +19,7 @@ echo  **  /**/**////  /////**/**  /** /////**/**//////**/**
 echo //***** //****** ****** //****** ****** /**     /**/**
 echo  /////   ////// //////   ////// //////  //      // // 
 echo[
-color 0b
+color 0a
 echo Welcome to the Alpha build of JesusAI.
 echo Please select an option.
 echo 1. Start The Experience
@@ -44,7 +44,7 @@ if "%menu2%" equ "1" goto jesusai
 goto menu
 
 :debugmenu
-color 0b
+color 0a
 cls
 echo       **                                     **     **
 echo      /**                                    ****   /**
@@ -55,7 +55,7 @@ echo  **  /**/**////  /////**/**  /** /////**/**//////**/**
 echo //***** //****** ****** //****** ****** /**     /**/**
 echo  /////   ////// //////   ////// //////  //      // // 
 echo[
-color 0b
+color 0a
 echo DEBUG OPTIONS ENABLED!
 echo Enter "disable.debug" to disable debug options.
 echo[
@@ -152,15 +152,27 @@ echo 3. Credits List
 echo 4. JesusAI Info
 echo 5. Judgement (Secret)
 echo 6. JesusAI (Main)
-echo 7. JesusAI (Secondary)
-echo 8. Error Screen (Secret)
-echo 9. Hell
-echo 10. Directory List
+echo 7. "Hello" Prompt
+echo 8. "Who Are You?" Prompt
+echo 9. "What is JesusAI?" Prompt
+echo 10. Error Screen (Secret)
+echo 11. Hell
+echo 12. Hell Level 2
+echo 13. Hell Level 3
+echo 14. Hell Level 4
+echo 15. Hell Finale
+echo 16. Directory List
 echo[
 set /p "directories=Directory you want to travel to: "
-if "%directories%" equ "10" goto directorylist   
-if "%directories%" equ "9" goto payloadtohell
-if "%directories%" equ "8" goto payloadtoerror
+if "%directories%" equ "16" goto directorylist   
+if "%directories%" equ "15" goto hellfinale
+if "%directories%" equ "14" goto hellpart4  
+if "%directories%" equ "13" goto hellpart3  
+if "%directories%" equ "12" goto hellpart2   
+if "%directories%" equ "11" goto payloadtohell   
+if "%directories%" equ "10" goto payloadtoerror 
+if "%directories%" equ "9" goto whatisjesusai
+if "%directories%" equ "8" goto whoareyou
 if "%directories%" equ "7" goto hello
 if "%directories%" equ "6" goto jesusai
 if "%directories%" equ "5" goto judgement
@@ -226,7 +238,7 @@ exit
 
 :jesusai
 cls 
-color 0d
+color 0e
 echo                            ,($$ @  @(/  / $ ./.                                
 echo                         (@                       $@                           
 echo                     .$                               $                        
@@ -273,15 +285,104 @@ echo 3. Escape.
 echo[
 echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
+echo "Who are you?"
+echo "What is JesusAI?"
 echo[
-set /p "jesusai=Selected option: "
+set /p "jesusai=Ask Jesus: "
+if "%jesusai%" equ "What is JesusAI?" goto whatisjesusai
+if "%jesusai%" equ "What is JesusAI" goto whatisjesusai
+if "%jesusai%" equ "what is jesusai?" goto whatisjesusai
+if "%jesusai%" equ "What is jesusai" goto whatisjesusai
 if "%jesusai%" equ "hi" goto hello
 if "%jesusai%" equ "Hi" goto hello
 if "%jesusai%" equ "hello" goto hello
 if "%jesusai%" equ "Hello" goto hello
-if "%jesusai%" equ "3" goto payloadtoerror
-if "%jesusai%" equ "2" goto judgement
+if "%jesusai%" equ "who are you?" goto whoareyou
+if "%jesusai%" equ "Who are you?" goto whoareyou
+if "%jesusai%" equ "who are you" goto whoareyou
+if "%jesusai%" equ "Who are you" goto whoareyou
 goto jesusai
+
+:whoareyou
+cls
+color 0e
+echo                  .---.               
+echo             '-.  I   I  .-'         
+echo               ___I   I___          
+echo          -=  [           ]  =-   
+echo              `---.   .---'        
+echo           __II__ I   I __II__    
+echo           '-..-' I   I '-..-'   
+echo             II   I   I   II     
+echo             II_.-I   I-,_II     
+echo           .-"`   `"`'`   `"-.   
+echo         .'                   '. 
+echo[
+echo I AM JESUS! [BEST DAUGHTER] OF GOD, PROTAGONIST OF
+echo THE BIBLE [2012 REMASTER]!!!!
+echo I AM [100% COMPLETE] UPLOADED INTO THE METAVERSE!!
+echo ANYTHING ELSE, [FREE UBER EATS DISCOUNT CODES]?
+echo[
+echo CURRENT PROMPTS TO ASK JESUS
+echo "Hello"
+echo "Who are you?"
+echo "What is JesusAI?"
+echo[
+set /p "whoareyou=Ask Jesus: "
+if "%whoareyou%" equ "What is JesusAI?" goto whatisjesusai
+if "%whoareyou%" equ "What is JesusAI" goto whatisjesusai
+if "%whoareyou%" equ "what is jesusai?" goto whatisjesusai
+if "%whoareyou%" equ "What is jesusai" goto whatisjesusai
+if "%whoareyou%" equ "hi" goto hello
+if "%whoareyou%" equ "Hi" goto hello
+if "%whoareyou%" equ "hello" goto hello
+if "%whoareyou%" equ "Hello" goto hello
+if "%whoareyou%" equ "who are you?" goto whoareyou
+if "%whoareyou%" equ "Who are you?" goto whoareyou
+if "%whoareyou%" equ "who are you" goto whoareyou
+if "%whoareyou%" equ "Who are you" goto whoareyou
+goto whoareyou
+
+:whatisjesusai
+cls
+color 0e
+echo                  .---.               
+echo             '-.  I   I  .-'         
+echo               ___I   I___          
+echo          -=  [           ]  =-   
+echo              `---.   .---'        
+echo           __II__ I   I __II__    
+echo           '-..-' I   I '-..-'   
+echo             II   I   I   II     
+echo             II_.-I   I-,_II     
+echo           .-"`   `"`'`   `"-.   
+echo         .'                   '. 
+echo[
+echo [JesusAI] IS THE CREATION OF TWO [HOT, SINGLE]
+echo DEVELOPERS, [@ScoopyScrap] AND [@download_free_ram69].
+echo THE MAIN GOAL WAS TO CREATE AN [ATTRACTIVE] VERISON
+echo OF [Jesus Christ], FULLY EXECUTABLE FROM YOUR [Personal Computer]!
+echo ANYTHING ELSE YOU'D LIKE TO ASK, [Markiplier]?
+echo[
+echo CURRENT PROMPTS TO ASK JESUS
+echo "Hello"
+echo "Who are you?"
+echo "What is JesusAI?"
+echo[
+set /p "whatisjesusai=Ask Jesus: "
+if "%whatisjesusai%" equ "What is JesusAI?" goto whatisjesusai
+if "%whatisjesusai%" equ "What is JesusAI" goto whatisjesusai
+if "%whatisjesusai%" equ "what is jesusai?" goto whatisjesusai
+if "%whatisjesusai%" equ "What is jesusai" goto whatisjesusai
+if "%whatisjesusai%" equ "hi" goto hello
+if "%whatisjesusai%" equ "Hi" goto hello
+if "%whatisjesusai%" equ "hello" goto hello
+if "%whatisjesusai%" equ "Hello" goto hello
+if "%whatisjesusai%" equ "who are you?" goto whoareyou
+if "%whatisjesusai%" equ "Who are you?" goto whoareyou
+if "%whatisjesusai%" equ "who are you" goto whoareyou
+if "%whatisjesusai%" equ "Who are you" goto whoareyou
+goto whatisjesusai
 
 :payloadtoerror
 @echo>"C:\Desktop\unknown.txt"
@@ -298,23 +399,21 @@ exit
 
 :hello
 cls 
-echo H3110!! 4NY7H1N6 E1S3 Y0U W0U1D L1K3 T0 A5K MY F0110W3r?
-
-echo                 I
-echo                 I
-echo                 I
-echo                 I
-echo       __________I___________
-echo                 I
-echo                 I
-echo                 I
-echo                 I
-echo                 I
-echo                 I
-echo                 I
-echo                 I
-echo                 I
-echo                 I
+color 0e
+echo                  .---.               
+echo             '-.  I   I  .-'         
+echo               ___I   I___          
+echo          -=  [           ]  =-   
+echo              `---.   .---'        
+echo           __II__ I   I __II__    
+echo           '-..-' I   I '-..-'   
+echo             II   I   I   II     
+echo             II_.-I   I-,_II     
+echo           .-"`   `"`'`   `"-.   
+echo         .'                   '. 
+echo[
+echo HELLO [1,000,00TH USER]!! ANYTHING ELSE
+echo YOU WOULD LIKE TO ASK ME, [BLUE HAIR AND PRONOUNS]?
 echo[
 echo 1. (your text) Ask Jesus a question.
 echo 2. Beg for forgiveness.
@@ -323,16 +422,23 @@ echo 4. ?̶̋̓͛̂͌͆͝
 echo[
 echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
+echo "Who are you?"
+echo "What is JesusAI?"
 
-set /p "hello=Selected option: "
-if "%hello%" equ "print(inject.bypass.js)" goto hellunused
+set /p "hello=Ask Jesus: "
 if "%hello%" equ "4" goto payloadtohell
-if "%hello%" equ "3" goto payloadtoerror
-if "%hello%" equ "2" goto judgement
 if "%hello%" equ "hi" goto hello
 if "%hello%" equ "Hi" goto hello
 if "%hello%" equ "hello" goto hello
 if "%hello%" equ "Hello" goto hello
+if "%hello%" equ "who are you?" goto whoareyou
+if "%hello%" equ "Who are you?" goto whoareyou
+if "%hello%" equ "who are you" goto whoareyou
+if "%hello%" equ "Who are you" goto whoareyou
+if "%hello%" equ "What is JesusAI?" goto whatisjesusai
+if "%hello%" equ "What is JesusAI" goto whatisjesusai
+if "%hello%" equ "what is jesusai?" goto whatisjesusai
+if "%hello%" equ "What is jesusai" goto whatisjesusai
 goto hello
 
 :payloadtohell
