@@ -34,6 +34,7 @@ echo This version may be unstable and is susceptible to crashing. You've been wa
 echo[
 
 set /p "menu2=Selected option: "
+if "%menu2%" equ "enable.dirchecker" goto dice
 if "%menu2%" equ "enable.debug" goto debugmenu
 if "%menu2%" equ "secret" goto judgement
 if "%menu2%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
@@ -42,6 +43,36 @@ if "%menu2%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
 if "%menu2%" equ "2" exit
 if "%menu2%" equ "1" goto jesusai
 goto menu
+
+:dice
+cls
+echo %random%  %random%  %random%
+echo %random%  %random%  %random%
+echo %random%  %random%  %random%
+echo %random%  %random%  %random%
+echo %random%  %random%  %random%
+echo %random%  %random%  %random%
+echo %random%  %random%  %random%
+echo %random%  %random%  %random%
+echo %random%  %random%  %random%
+echo %random%  %random%  %random%
+echo %random%  %random%  %random%
+echo[
+echo Match dir?
+echo[
+set /p "dice=?: "
+if "%dice%" equ "true" goto confirm
+if "%dice%" equ "false" goto menu
+goto dice
+
+:confirm
+cls
+echo Maximised output was detected in JesusAI. Signal has been confirmed. >>"%~dp0dirResults.txt"
+echo Confirmed
+echo[
+set /p "accept=?: "
+if "%accept%" equ "accept" goto menu
+exit
 
 :debugmenu
 color 0a
@@ -79,6 +110,7 @@ echo[
 ::DON'T MESS AROUND WITH THIS IF YOU DON'T KNOW WHAT TO FUCKING DO
 
 set /p "menudebug=Selected option: "
+if "%menudebug%" equ "enable.dirchecker" goto dice
 if "%menudebug%" equ "disable.debug" goto menu
 if "%menudebug%" equ "secret" goto judgement
 if "%menudebug%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
