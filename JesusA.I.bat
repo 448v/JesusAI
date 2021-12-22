@@ -4,10 +4,10 @@
 
 
 @echo off
-title JesusAI 00.01 (Development Copy)
+title JesusAI (Development Copy)
 
 :menu
-color 0a
+color 0e
 cls
 echo       **                                     **     **
 echo      /**                                    ****   /**
@@ -18,18 +18,19 @@ echo  **  /**/**////  /////**/**  /** /////**/**//////**/**
 echo //***** //****** ****** //****** ****** /**     /**/**
 echo  /////   ////// //////   ////// //////  //      // // 
 echo[
-color 0a
-echo Welcome to the Alpha build of JesusAI.
+color 0e
+echo Welcome to the Alpha version of JesusAI.
 echo Please select an option.
 echo 1. Start Experience
 echo 2. Close Experience
-echo 3. Load GitHub Repository Page
+echo 3. Open GitHub Repository Page
 echo 4. Credits
 echo[
 echo Copyright 2021 C0rp Industries
 echo Current version: v00.01 (Private Development Build)
 echo[
-echo This version may be unstable and is susceptible to crashing. You've been warned!
+echo This version may be unstable and new additions are susceptible to crashing. 
+echo You've been warned!
 echo[
 set /p "menu2=Selected option: "
 if "%menu2%" equ "enable.debug" goto debugmenu
@@ -42,7 +43,7 @@ if "%menu2%" equ "1" goto jesusai
 goto menu
 
 :debugmenu
-color 0a
+color 0e
 cls
 echo       **                                     **     **
 echo      /**                                    ****   /**
@@ -53,15 +54,15 @@ echo  **  /**/**////  /////**/**  /** /////**/**//////**/**
 echo //***** //****** ****** //****** ****** /**     /**/**
 echo  /////   ////// //////   ////// //////  //      // // 
 echo[
-color 0a
+color 0e
 echo DEBUG OPTIONS ENABLED!
 echo Enter "disable.debug" to disable debug options.
 echo[
-echo Welcome to the Alpha build of JesusAI.
+echo Welcome to the Alpha version of JesusAI.
 echo Please select an option.
 echo 1. Start Experience
 echo 2. Close Experience
-echo 3. Load GitHub Repository Page
+echo 3. Open GitHub Repository Page
 echo 4. Credits
 echo 5. (DEBUG) List Directories
 echo 6. (DEBUG) JesusAI Info
@@ -70,11 +71,11 @@ echo[
 echo Copyright 2021 C0rp Industries
 echo Current version: v00.01 (Private Development Build)
 echo[
-echo This version may be unstable and is susceptible to crashing. You've been warned!
+echo This version may be unstable and new additions are susceptible to crashing. 
+echo You've been warned!
 echo[
 
 ::Easier to manage options menu
-::DON'T MESS AROUND WITH THIS IF YOU DON'T KNOW WHAT TO FUCKING DO
 
 set /p "menudebug=Selected option: "
 if "%menudebug%" equ "disable.debug" goto menu
@@ -126,10 +127,6 @@ if "%embedded%" equ "2" start "" "https://github.com/JesusAIexperience/JesusAI"
 if "%embedded%" equ "1" start "" https://i.imgur.com/DCtv3fR.gif
 goto content
 
-
-
-
-
 :directorylist
 cls
 echo  *******   ** *******   ********   ******  **********   *******   *******   ** ********  ********
@@ -160,8 +157,10 @@ echo 13. Hell Level 3
 echo 14. Hell Level 4
 echo 15. Hell Finale
 echo 16. Directory List
+echo 17. Old JesusAI (Easter Egg on Credits Screen)
 echo[
 set /p "directories=Directory you want to travel to: "
+if "%directories%" equ "17" goto oldmenu
 if "%directories%" equ "16" goto directorylist   
 if "%directories%" equ "15" goto hellfinale
 if "%directories%" equ "14" goto hellpart4  
@@ -192,14 +191,146 @@ echo  //****** /**   //**/********/*******  /**    /**     ********
 echo   //////  //     // //////// ///////   //     //     ////////  
 echo[
 echo Created by C0rp Industries
-echo Code written by @ScoopyScrap and @download_free_ram69 on Instagram
-echo Project concept established in 2019
+echo Code written by @schneerocket and @download_free_ram69 on Instagram
+echo Project concept established in Late 2019 as a joke
+echo Project fully started in December 2021
 echo Repository hosted on GitHub
 echo[
 echo Type "back" to go back.
 set /p "credits=Response: "
+if "%credits%" equ "unlock" goto oldmenu
 if "%credits%" equ "back" goto menu
 goto credits
+
+:oldmenu
+color 0a
+cls
+echo Jesus A.I
+echo The first ever build / original edition
+echo Slightly optimized and modified to work properly
+echo Originally by @download_free_ram69
+echo Recoded and patched in by @schneerocket
+echo[
+echo Please pick an option
+echo 1. Start Experience
+echo 2. Exit
+echo 3. Return to the new JesusAI
+set /p "oldmenu=Selected option: "
+if "%oldmenu%" equ "1" goto oldjesusai
+if "%oldmenu%" equ "2" exit
+if "%oldmenu%" equ "3" goto menu
+if "%oldmenu%" equ "4" goto oldjudgement
+goto oldmenu
+
+:oldjudgement
+cls
+color 3c
+echo THE DAY OF JUDGEMENT IS FAST APPROACHING AND YOU WILL BE HARSHLY JUDGED IF YOU
+echo CONTINUE TO DISOBEY ME 
+color 1a
+pause
+exit 
+
+:oldjesusai
+cls 
+color 0c
+echo                            ,($$ @  @(/  / $ ./.                                
+echo                         (@                       $@                           
+echo                     .$                               $                        
+echo                   $$                 .@                 $                      
+echo                 /                 .@. .@                ,                    
+echo                /              ,$@(       ,$/             (                    
+echo                @        $@$(.                $@$ .//      @                   
+echo               $,       @$                           ,@      (                  
+echo               @       $.                              $(    .                
+echo              $     $$                                  @    (                
+echo             $    $/                                   $     @                
+echo            .$       @    ,(@@$/,$          ,$,/$$$    ./     @                
+echo           $(        $.     ($@               $$$,      @      @                
+echo          $/         .$    ,@@@$.     .      ($$$(.    (       $                
+echo          @.          @               /                $       $                
+echo          $/          @.              ,                @       /.               
+echo           $          $.                               $        ((              
+echo            @        .@             .    ,             ,/        $$             
+echo            $,       $@,             .@$(             (/$          @            
+echo            @        $$ @     __.$$ #     #$$$__    $$ ,($         ,$           
+echo         $@.         @$  \ #/$@/@     #$$#/$#    #$/  $(./           $          
+echo        @            @ $         (@. ~~~~~  $,         ,$           ,@          
+echo       /(            ,.$       ( @    $$$    $ .      //            ,@          
+echo       $,             .,.         $$$    $/$/        $              $          
+echo       @            ,   $,                         $@              $@           
+echo       $            ,    @$@                     $,@ @.           $            
+echo        $             $$@@@$(                     $ ($/            /           
+echo         @.             @.@  $                   $  ,$@ .(         @.          
+echo          ,$            $$@     @              $.   ,$ @@         /$        
+echo          $ $,          $. $     .@.         /$     $$ /$        $$       
+echo            @$         .@  $,       @    .@/        @  $$      $(               
+echo           @         ($     @        .(@.@         ,$  ,$     @                 
+echo          /(       ,/ $,    .@          $          $.   @      $@.              
+echo           @       .   ,$    $@                    @     $        $             
+echo            @           .(    ,$                  $$       $/     @             
+echo             (@          @$    @                 .@        $@,   ,$             
+echo               .@       ,, $@$.($                @    .$@(  $,  .@,             
+echo                 //    .(      ,$@@@$$/,.     ,($@@@$,      @  $@.              
+echo                  @  .@.                                  @. .@@                
+echo                 ,/$.                                    $  @, @                                   
+echo (your text) ASK JESUS A QUESTION
+echo[
+echo 2. BEG FOR FORGIVENESS
+echo[
+echo 3. ESCAPE
+echo (Only "Hello" and "hello" are valid responses, along with the numbers.)
+echo[
+set /p "oldjesusai=Selected option: "
+if "%oldjesusai%" equ "Hello" goto oldhello
+if "%oldjesusai%" equ "hello" goto oldhello
+if "%oldjesusai%" equ "2" goto oldhell
+if "%oldjesusai%" equ "3" goto olderror
+goto oldjesusai
+
+:olderror
+cls
+color 0a
+echo %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random%   
+echo %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% %random% 
+goto error
+exit
+
+:oldhell
+cls
+color 4f
+echo You cannot escape.
+echo There is no way to leave the wrath of the Lord.
+echo Type anything to return to the menu.
+set /p "oldhell=?: "
+if "%oldhell%" equ "hbmnkl182389721" exit
+goto oldmenu
+
+:oldhello
+cls 
+echo Hello. A%%%%%@@£$£$"%"^NYThING else you would like to ask my disciple?
+
+echo                 I
+echo                 I
+echo                 I
+echo                 I
+echo       __________I___________
+echo                 I
+echo                 I
+echo                 I
+echo                 I
+echo                 I
+echo                 I
+echo                 I
+echo                 I
+echo                 I
+echo                 I
+echo[
+echo This is all we finished in the original build of JesusAI.
+echo You can type anything to go back up to the menu.
+set /p "oldhello=?: "
+if "%oldhello%" equ "saehiodfisafo891234" exit
+goto oldmenu
 
 :jesusinfo
 cls
@@ -383,8 +514,7 @@ if "%whatisjesusai%" equ "Who are you" goto whoareyou
 goto whatisjesusai
 
 :payloadtoerror
-@echo>"C:\Desktop\unknown.txt"
-@echo I CAN SEE YOU, %USERNAME%. HAVE YOU SINNED? > unknown.txt
+@echo I CAN SEE YOU, %USERNAME%. HAVE YOU SINNED? >>"%~dp0Mural.txt"
 cls
 goto error
 
@@ -441,8 +571,7 @@ goto hello
 
 :payloadtohell
 cls
-@echo>"C:\Desktop\nightmare.txt"
-@echo ඞ > unknown.txt
+echo Type "unlock" on the credits scene to unlock a surprise >>"%~dp0Hello.txt"
 goto hell
 
 :hell
@@ -521,6 +650,7 @@ echo Type "return" to close JesusAI.
 echo[
 color 0f
 echo RIDDLE ENDING
+echo RIDDLE ENDING unlocked. Ending unlocked at %date% %time%. >>"%~dp0unlockedEndings.txt"
 set /p "hellfinale=Response: "
 if "%hellfinale%" equ "return" goto menu
 goto hellfinale
