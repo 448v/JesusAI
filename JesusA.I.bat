@@ -2,23 +2,63 @@
 ::JesusAI runs best on Powershell, however it will load using Command Prompt too
 ::Found an issue? Report it at our repository: https://github.com/JesusAIexperience/JesusAI
 
-
 @echo off
-title JesusAI (Development Copy)
+title JesusAI (Infdev Build)
+
+:info
+cls
+if not exist "%temp%\verify.txt" (
+    cd %temp%
+    echo .> verify.txt
+    goto termsandconditions
+)
+goto menu
+
+:termsandconditions
+color 1f
+cls
+echo                    ___                                            
+echo                   /\_ \                                           
+echo  __  __  __     __\//\ \     ___    ___     ___ ___      __       
+echo /\ \/\ \/\ \  /'__`\\ \ \   /'___\ / __`\ /' __` __`\  /'__`\     
+echo \ \ \_/ \_/ \/\  __/ \_\ \_/\ \__//\ \L\ \/\ \/\ \/\ \/\  __/  __ 
+echo  \ \___x___/'\ \____\/\____\ \____\ \____/\ \_\ \_\ \_\ \____\/\ \
+echo   \/__//__/   \/____/\/____/\/____/\/___/  \/_/\/_/\/_/\/____/\ \/
+echo   __                                  ___                         
+echo  /\ \  __                  __        /\_ \                        
+echo  \_\ \/\_\    ____    ___ /\_\  _____\//\ \      __               
+echo  /'_` \/\ \  /',__\  /'___\/\ \/\ '__`\\ \ \   /'__`\             
+echo /\ \L\ \ \ \/\__, `\/\ \__/\ \ \ \ \L\ \\_\ \_/\  __/             
+echo \ \___,_\ \_\/\____/\ \____\\ \_\ \ ,__//\____\ \____\            
+echo  \/__,_ /\/_/\/___/  \/____/ \/_/\ \ \/ \/____/\/____/          
+echo[
+echo The game has detected this is your first time running JesusAI.
+echo Please read our terms and conditions.
+echo[
+echo This game is not designed to offend in any way.
+echo All of JesusAI was created by two devs, @download_free_ram69 and @schneerocket.
+echo This game in no way means to bash religion or its figures.
+echo[
+echo Please type anything to agree to these terms.
+echo This screen will not show up again once you agree.
+echo If you do not agree, please close the game now.
+echo[
+set /p "terms=?: "
+if "%terms%" equ "qweha8ds78dagdbahl2" exit
+goto menu
 
 :menu
-color 0e
+color 0c
 cls
-echo       **                                     **     **
-echo      /**                                    ****   /**
-echo      /**  *****   ****** **   **  ******   **//**  /**
-echo      /** **///** **//// /**  /** **////   **  //** /**
-echo      /**/*******//***** /**  /**//*****  **********/**
-echo  **  /**/**////  /////**/**  /** /////**/**//////**/**
-echo //***** //****** ****** //****** ****** /**     /**/**
-echo  /////   ////// //////   ////// //////  //      // // 
+echo  _____                                  ______  ______     
+echo /\___ \                                /\  _  \/\__  _\    
+echo \/__/\ \     __    ____  __  __    ____\ \ \L\ \/_/\ \/    
+echo    _\ \ \  /'__`\ /',__\/\ \/\ \  /',__\\ \  __ \ \ \ \    
+echo   /\ \_\ \/\  __//\__, `\ \ \_\ \/\__, `\\ \ \/\ \ \_\ \__ 
+echo   \ \____/\ \____\/\____/\ \____/\/\____/ \ \_\ \_\/\_____\
+echo    \/___/  \/____/\/___/  \/___/  \/___/   \/_/\/_/\/_____/
 echo[
-color 0e
+color 0c
 echo Welcome to the Alpha version of JesusAI.
 echo Please select an option.
 echo 1. Start Experience
@@ -27,34 +67,35 @@ echo 3. Open GitHub Repository Page
 echo 4. Credits
 echo[
 echo Copyright 2021 C0rp Industries
-echo Current version: v00.01 (Private Development Build)
+echo Version: 0.01 (GitHub Development Build)
+echo Last update: 27/12/2021
 echo[
-echo This version may be unstable and new additions are susceptible to crashing. 
-echo You've been warned!
+echo This version is probably unstable.
+echo Expect random crashes or glitches.
 echo[
-set /p "menu2=Selected option: "
-if "%menu2%" equ "enable.debug" goto debugmenu
-if "%menu2%" equ "secret" goto judgement
-if "%menu2%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
-if "%menu2%" equ "4" goto credits
-if "%menu2%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
-if "%menu2%" equ "2" exit
-if "%menu2%" equ "1" goto jesusai
+set /p "menu=Selected option: "
+if "%menu%" equ "enable.debug" set "debug=on" & goto :debugmenu
+if "%menu%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
+if "%menu%" equ "secret" goto judgement
+if "%menu%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
+if "%menu%" equ "4" goto credits
+if "%menu%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
+if "%menu%" equ "2" exit
+if "%menu%" equ "1" goto jesusai
 goto menu
 
 :debugmenu
-color 0e
+color 0c
 cls
-echo       **                                     **     **
-echo      /**                                    ****   /**
-echo      /**  *****   ****** **   **  ******   **//**  /**
-echo      /** **///** **//// /**  /** **////   **  //** /**
-echo      /**/*******//***** /**  /**//*****  **********/**
-echo  **  /**/**////  /////**/**  /** /////**/**//////**/**
-echo //***** //****** ****** //****** ****** /**     /**/**
-echo  /////   ////// //////   ////// //////  //      // // 
+echo  _____                                  ______  ______     
+echo /\___ \                                /\  _  \/\__  _\    
+echo \/__/\ \     __    ____  __  __    ____\ \ \L\ \/_/\ \/    
+echo    _\ \ \  /'__`\ /',__\/\ \/\ \  /',__\\ \  __ \ \ \ \    
+echo   /\ \_\ \/\  __//\__, `\ \ \_\ \/\__, `\\ \ \/\ \ \_\ \__ 
+echo   \ \____/\ \____\/\____/\ \____/\/\____/ \ \_\ \_\/\_____\
+echo    \/___/  \/____/\/___/  \/___/  \/___/   \/_/\/_/\/_____/
 echo[
-color 0e
+color 0c
 echo DEBUG OPTIONS ENABLED!
 echo Enter "disable.debug" to disable debug options.
 echo[
@@ -69,16 +110,18 @@ echo 6. (DEBUG) JesusAI Info
 echo 7. (DEBUG) List All Embedded Content
 echo[
 echo Copyright 2021 C0rp Industries
-echo Current version: v00.01 (Private Development Build)
+echo Version: 0.01 (GitHub Development Build)
+echo Last update: 27/12/2021
 echo[
-echo This version may be unstable and new additions are susceptible to crashing. 
-echo You've been warned!
+echo This version is probably unstable.
+echo Expect random crashes or glitches.
 echo[
 
 ::Easier to manage options menu
 
 set /p "menudebug=Selected option: "
-if "%menudebug%" equ "disable.debug" goto menu
+if "%menudebug%" equ "disable.debug" set "debug=off" & goto menu
+if "%menudebug%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
 if "%menudebug%" equ "secret" goto judgement
 if "%menudebug%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
 if "%menudebug%" equ "7" goto content
@@ -92,23 +135,20 @@ goto debugmenu
 
 :content
 cls
-echo  ******** ****     **** ******   ******** *******   *******   ******** *******  
-echo /**///// /**/**   **/**/*////** /**///// /**////** /**////** /**///// /**////** 
-echo /**      /**//** ** /**/*   /** /**      /**    /**/**    /**/**      /**    /**
-echo /******* /** //***  /**/******  /******* /**    /**/**    /**/******* /**    /**
-echo /**////  /**  //*   /**/*//// **/**////  /**    /**/**    /**/**////  /**    /**
-echo /**      /**   /    /**/*    /**/**      /**    ** /**    ** /**      /**    ** 
-echo /********/**        /**/******* /********/*******  /*******  /********/*******  
-echo //////// //         // ///////  //////// ///////   ///////   //////// ///////   
-echo[
-echo    ******    *******   ****     ** ********** ******** ****     ** **********
-echo   **////**  **/////** /**/**   /**/////**/// /**///// /**/**   /**/////**/// 
-echo  **    //  **     //**/**//**  /**    /**    /**      /**//**  /**    /**    
-echo /**       /**      /**/** //** /**    /**    /******* /** //** /**    /**    
-echo /**       /**      /**/**  //**/**    /**    /**////  /**  //**/**    /**    
-echo //**    **//**     ** /**   //****    /**    /**      /**   //****    /**    
-echo  //******  //*******  /**    //***    /**    /********/**    //***    /**    
-echo   //////    ///////   //      ///     //     //////// //      ///     //     
+echo                  __                 __      __             __     
+echo                 /\ \               /\ \    /\ \           /\ \    
+echo    __    ___ ___\ \ \____     __   \_\ \   \_\ \     __   \_\ \   
+echo  /'__`\/' __` __`\ \ '__`\  /'__`\ /'_` \  /'_` \  /'__`\ /'_` \  
+echo /\  __//\ \/\ \/\ \ \ \L\ \/\  __//\ \L\ \/\ \L\ \/\  __//\ \L\ \ 
+echo \ \____\ \_\ \_\ \_\ \_,__/\ \____\ \___,_\ \___,_\ \____\ \___,_\
+echo  \/____/\/_/\/_/\/_/\/___/  \/____/\/__,_ /\/__,_ /\/____/\/__,_ /                                                    
+echo                      __                  __                       
+echo                     /\ \__              /\ \__                    
+echo   ___    ___     ___\ \ ,_\    __    ___\ \ ,_\                   
+echo  /'___\ / __`\ /' _ `\ \ \/  /'__`\/' _ `\ \ \/                   
+echo /\ \__//\ \L\ \/\ \/\ \ \ \_/\  __//\ \/\ \ \ \_                  
+echo \ \____\ \____/\ \_\ \_\ \__\ \____\ \_\ \_\ \__\                 
+echo  \/____/\/___/  \/_/\/_/\/__/\/____/\/_/\/_/\/__/                                                                                   
 echo[
 echo This page shows all links + images used in JesusAI.
 echo This will be updated periodically as new content is added.
@@ -118,10 +158,12 @@ echo CONTENT LIST:
 echo 1. Secret Jesus Gif (in Main Menu)
 echo 2. GitHub Repository
 echo 3. Ominous Jesus Photo (in Judgement)
+echo 4. Middle Finger (in Main Menu)
 echo[
 echo Type "back" to go back.
 set /p "embedded=Selected option: "
 if "%embedded%" equ "back" goto debugmenu
+if "%embedded%" equ "4" start "" "https://i.imgur.com/SEhpuRg.jpg"
 if "%embedded%" equ "3" start "" http://i.ibb.co/T0yZQGz/repent.png
 if "%embedded%" equ "2" start "" "https://github.com/JesusAIexperience/JesusAI"
 if "%embedded%" equ "1" start "" https://i.imgur.com/DCtv3fR.gif
@@ -129,14 +171,13 @@ goto content
 
 :directorylist
 cls
-echo  *******   ** *******   ********   ******  **********   *******   *******   ** ********  ********
-echo /**////** /**/**////** /**/////   **////**/////**///   **/////** /**////** /**/**/////  **////// 
-echo /**    /**/**/**   /** /**       **    //     /**     **     //**/**   /** /**/**      /**       
-echo /**    /**/**/*******  /******* /**           /**    /**      /**/*******  /**/******* /*********
-echo /**    /**/**/**///**  /**////  /**           /**    /**      /**/**///**  /**/**////  ////////**
-echo /**    ** /**/**  //** /**      //**    **    /**    //**     ** /**  //** /**/**             /**
-echo /*******  /**/**   //**/******** //******     /**     //*******  /**   //**/**/******** ******** 
-echo ///////   // //     // ////////   //////      //       ///////   //     // // //////// ////////  
+echo   __                          __                                       
+echo  /\ \  __                    /\ \__                __                  
+echo  \_\ \/\_\  _ __    __    ___\ \ ,_\   ___   _ __ /\_\     __    ____  
+echo  /'_` \/\ \/\`'__\/'__`\ /'___\ \ \/  / __`\/\`'__\/\ \  /'__`\ /',__\ 
+echo /\ \L\ \ \ \ \ \//\  __//\ \__/\ \ \_/\ \L\ \ \ \/ \ \ \/\  __//\__, `\
+echo \ \___,_\ \_\ \_\\ \____\ \____\\ \__\ \____/\ \_\  \ \_\ \____\/\____/
+echo  \/__,_ /\/_/\/_/ \/____/\/____/ \/__/\/___/  \/_/   \/_/\/____/\/___/ 
 echo[
 echo This lists all places you can go using JesusAI.
 echo List of current directories (can be updated):
@@ -158,8 +199,12 @@ echo 14. Hell Level 4
 echo 15. Hell Finale
 echo 16. Directory List
 echo 17. Old JesusAI (Easter Egg on Credits Screen)
+echo 18. Terms and Conditions Menu
+echo DISCLAIMER: It's recommended not to go here since it could break JesusAI
+echo You've been warned.
 echo[
 set /p "directories=Directory you want to travel to: "
+if "%directories%" equ "18" goto termsandconditions
 if "%directories%" equ "17" goto oldmenu
 if "%directories%" equ "16" goto directorylist   
 if "%directories%" equ "15" goto hellfinale
@@ -181,14 +226,13 @@ goto directorylist
 
 :credits
 cls
-echo   ******  *******   ******** *******   ** **********  ********
-echo   **////**/**////** /**///// /**////** /**/////**///  **////// 
-echo  **    // /**   /** /**      /**    /**/**    /**    /**       
-echo /**       /*******  /******* /**    /**/**    /**    /*********
-echo /**       /**///**  /**////  /**    /**/**    /**    ////////**
-echo //**    **/**  //** /**      /**    ** /**    /**           /**
-echo  //****** /**   //**/********/*******  /**    /**     ******** 
-echo   //////  //     // //////// ///////   //     //     ////////  
+echo                       __      __             
+echo                      /\ \  __/\ \__          
+echo   ___   _ __    __   \_\ \/\_\ \ ,_\   ____  
+echo  /'___\/\`'__\/'__`\ /'_` \/\ \ \ \/  /',__\ 
+echo /\ \__/\ \ \//\  __//\ \L\ \ \ \ \ \_/\__, `\
+echo \ \____\\ \_\\ \____\ \___,_\ \_\ \__\/\____/
+echo  \/____/ \/_/ \/____/\/__,_ /\/_/\/__/\/___/ 
 echo[
 echo Created by C0rp Industries
 echo Code written by @schneerocket and @download_free_ram69 on Instagram
@@ -200,7 +244,6 @@ echo Type "back" to go back.
 set /p "credits=Response: "
 if "%credits%" equ "unlock" goto oldmenu
 if "%credits%" equ "back" goto menu
-goto credits
 
 :oldmenu
 color 0a
@@ -303,7 +346,7 @@ echo You cannot escape.
 echo There is no way to leave the wrath of the Lord.
 echo Type anything to return to the menu.
 set /p "oldhell=?: "
-if "%oldhell%" equ "hbmnkl182389721" exit
+if "%oldhell%" equ "hbmnkASDSAASDl182389721" exit
 goto oldmenu
 
 :oldhello
@@ -334,14 +377,13 @@ goto oldmenu
 
 :jesusinfo
 cls
-echo  ** ****     ** ********   *******  
-echo /**/**/**   /**/**/////   **/////** 
-echo /**/**//**  /**/**       **     //**
-echo /**/** //** /**/******* /**      /**
-echo /**/**  //**/**/**////  /**      /**
-echo /**/**   //****/**      //**     ** 
-echo /**/**    //***/**       //*******  
-echo // //      /// //         ///////   
+echo                ___         
+echo  __          /'___\        
+echo /\_\    ___ /\ \__/  ___   
+echo \/\ \ /' _ `\ \ ,__\/ __`\ 
+echo  \ \ \/\ \/\ \ \ \_/\ \L\ \
+echo   \ \_\ \_\ \_\ \_\\ \____/
+echo    \/_/\/_/\/_/\/_/ \/___/ 
 echo[
 echo JesusAI's current directory is:
 echo %CD%
@@ -350,7 +392,8 @@ echo The current date and time the program is being run on is:
 echo %date% %time%
 echo[
 echo This copy of JesusAI's version is:
-echo v00.01 (Private Development Build)
+echo 0.01 (GitHub Development Build)
+echo Last update: 27/12/2021
 echo Type "back" to go back.
 set /p "jesusinfo2=Selected option: "
 if "%jesusinfo2%" equ "back" goto debugmenu
@@ -359,15 +402,65 @@ goto jesusinfo
 :judgement
 cls
 color 4f
-echo THE DAY OF JUDGEMENT IS FAST APPROACHING. YOU SHALL BE PUNISHED IF YOU
-echo CONTINUE TO DISOBEY ME, YOUNG ONE.
+echo                     .-=====-.
+echo                     l .""". l
+echo                     l l   l l
+echo                     l l   l l
+echo                     l '---' l
+echo                     l       l
+echo                     l       l
+echo  .-================-'       '-================-.
+echo  l  _                                          l
+echo  l.'o\                                    __   l
+echo  l '-.'.                                .'o.`  l
+echo  '-==='.'.=========-.       .-========.'.-'===-'
+echo         '.`'._    .===,     l     _.-' /
+echo           '._ '-./  ,//\   _l _.-'  _.'
+echo              '-.l ,//'  \-'  `   .-'
+echo                 `//'_`--;    ;.-'
+echo                   `\._ ;l    l
+echo                      \`-'  . l
+echo                      l_.-'-._l
+echo                      \  _'_  /
+echo                      l; -:- l 
+echo                      ll -.- \ 
+echo                      l;     .\
+echo                      / `'\'`\-;
+echo                     ;`   '. `_/
+echo                     l,`-._;  .;
+echo                     `;\  `.-'-;
+echo                      l \   \  l
+echo                      l  `\  \ l
+echo                      l   \  l l
+echo                      l  /  /` /
+echo                      l l  /l  l
+echo                      l l / l /
+echo                      l / l/ /l
+echo                      l \ / / l
+echo                      l  /o l l
+echo                      l  l_/  l
+echo                      l       l
+echo                      l       l
+echo                      l       l
+echo                      l       l
+echo                      l       l
+echo                      l       l
+echo                      l       l
+echo                      '-=====-'
+echo             YOUR JUDGEMENT HAS ALMOST
+echo                      ARRIVED.
+echo[
+echo         TYPE / PRESS ANYTHING TO RETURN TO
+echo                     THE MENU.
+echo[
+set /p "judgement=?: "
+if "%judgement%" equ "jsadbhjadbhasdahsdi1gb23h123h" exit
 start "" http://i.ibb.co/T0yZQGz/repent.png
-pause
-exit
+goto menu
 
 :jesusai
 cls 
-color 0e
+color 0b
 echo                            ,($$ @  @(/  / $ ./.                                
 echo                         (@                       $@                           
 echo                     .$                               $                        
@@ -418,6 +511,8 @@ echo "Who are you?"
 echo "What is JesusAI?"
 echo[
 set /p "jesusai=Ask Jesus: "
+if "%jesusai%" equ "2" goto judgement
+if "%jesusai%" equ "3" goto payloadtoerror
 if "%jesusai%" equ "What is JesusAI?" goto whatisjesusai
 if "%jesusai%" equ "What is JesusAI" goto whatisjesusai
 if "%jesusai%" equ "what is jesusai?" goto whatisjesusai
@@ -488,7 +583,7 @@ echo           .-"`   `"`'`   `"-.
 echo         .'                   '. 
 echo[
 echo [JesusAI] IS THE CREATION OF TWO [HOT, SINGLE]
-echo DEVELOPERS, [@ScoopyScrap] AND [@download_free_ram69].
+echo DEVELOPERS, [@schneerocket] AND [@download_free_ram69].
 echo THE MAIN GOAL WAS TO CREATE AN [ATTRACTIVE] VERISON
 echo OF [Jesus Christ], FULLY EXECUTABLE FROM YOUR [Personal Computer]!
 echo ANYTHING ELSE YOU'D LIKE TO ASK, [Markiplier]?
