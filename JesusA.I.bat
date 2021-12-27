@@ -108,6 +108,7 @@ echo 4. Credits
 echo 5. (DEBUG) List Directories
 echo 6. (DEBUG) JesusAI Info
 echo 7. (DEBUG) List All Embedded Content
+echo 8. (DEBUG) Experimental Features
 echo[
 echo Copyright 2021 C0rp Industries
 echo Version: 0.01 (GitHub Development Build)
@@ -120,6 +121,7 @@ echo[
 ::Easier to manage options menu
 
 set /p "menudebug=Selected option: "
+if "%menudebug%" equ "8" goto experimental
 if "%menudebug%" equ "disable.debug" set "debug=off" & goto menu
 if "%menudebug%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
 if "%menudebug%" equ "secret" goto judgement
@@ -132,6 +134,62 @@ if "%menudebug%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
 if "%menudebug%" equ "2" exit
 if "%menudebug%" equ "1" goto jesusai
 goto debugmenu
+
+:experimental
+cls
+color 1f
+echo                                                                    __             ___      
+echo                                      __                           /\ \__         /\_ \     
+echo    __   __  _  _____      __   _ __ /\_\    ___ ___      __    ___\ \ ,_\    __  \//\ \    
+echo  /'__`\/\ \/'\/\ '__`\  /'__`\/\`'__\/\ \ /' __` __`\  /'__`\/' _ `\ \ \/  /'__`\  \ \ \   
+echo /\  __/\/'  '/\ \ \L\ \/\  __/\ \ \/ \ \ \/\ \/\ \/\ \/\  __//\ \/\ \ \ \_/\ \L\.\_ \_\ \_ 
+echo \ \____\/\_/\_\\ \ ,__/\ \____\\ \_\  \ \_\ \_\ \_\ \_\ \____\ \_\ \_\ \__\ \__/.\_\/\____\
+echo  \/____/\//\/_/ \ \ \/  \/____/ \/_/   \/_/\/_/\/_/\/_/\/____/\/_/\/_/\/__/\/__/\/_/\/____/
+echo                  \ \_\                                                                     
+echo                   \/_/                                                                     
+echo    ___                __                                                                   
+echo  /'___\              /\ \__                                                                
+echo /\ \__/   __     __  \ \ ,_\  __  __  _ __    __    ____                                   
+echo \ \ ,__\/'__`\ /'__`\ \ \ \/ /\ \/\ \/\`'__\/'__`\ /',__\                                  
+echo  \ \ \_/\  __//\ \L\.\_\ \ \_\ \ \_\ \ \ \//\  __//\__, `\                                 
+echo   \ \_\\ \____\ \__/.\_\\ \__\\ \____/\ \_\\ \____\/\____/                                 
+echo    \/_/ \/____/\/__/\/_/ \/__/ \/___/  \/_/ \/____/\/___/                                  
+echo[
+echo WARNING: These features could cause the game to crash or other unintended side effects.
+echo These features are not regularly maintained and could become outdated.
+echo Use at your own risk.
+echo[
+echo Current Experimental Features:
+echo 1. Delete Intro Configuration File (Makes the terms and conditions screen appear on launch)
+echo[
+echo More features will be added soon (maybe).
+echo You can also type anything else to go back to the menu.
+set /p "experimental=Activate feature: "
+if "%experimental%" equ "1" goto areyousure1
+goto debugmenu
+
+:areyousure1
+cls
+echo Are you sure you want to delete the Intro Configuration File?
+echo (Disclaimer: This file is rewritten when the game is booted.)
+echo (You will not cause permanent damage by deleting it.)
+echo (This is more for development purposes.)
+echo Respond with Y to delete, or N to return to the Experimental Features menu.
+echo[
+set /p "areyousure1=?: "
+if "%areyousure1%" equ "Y" del "%temp%\verify.txt" & goto completed1
+if "%areyousure1%" equ "y" del "%temp%\verify.txt" & goto completed1
+if "%areyousure1%" equ "N" goto experimental
+if "%areyousure1%" equ "n" goto experimental
+goto areyousure1
+
+:completed1
+cls
+echo File deleted.
+echo Type anything to return to the Experimental Features menu.
+set /p "completed1=?: "
+if "%completed1%" equ "saoihdhoisadfsad7dsad87d9sad799ad" exit
+goto experimental
 
 :content
 cls
@@ -449,6 +507,8 @@ echo                      l       l
 echo                      '-=====-'
 echo             YOUR JUDGEMENT HAS ALMOST
 echo                      ARRIVED.
+echo[
+echo                      REPENT.
 echo[
 echo         TYPE / PRESS ANYTHING TO RETURN TO
 echo                     THE MENU.
