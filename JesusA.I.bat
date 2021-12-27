@@ -76,7 +76,6 @@ echo[
 set /p "menu=Selected option: "
 if "%menu%" equ "enable.debug" set "debug=on" & goto :debugmenu
 if "%menu%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
-if "%menu%" equ "secret" goto judgement
 if "%menu%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
 if "%menu%" equ "4" goto credits
 if "%menu%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
@@ -107,8 +106,7 @@ echo 3. Open GitHub Repository Page
 echo 4. Credits
 echo 5. (DEBUG) List Directories
 echo 6. (DEBUG) JesusAI Info
-echo 7. (DEBUG) List All Embedded Content
-echo 8. (DEBUG) Experimental Features
+echo 7. (DEBUG) Experimental Features
 echo[
 echo Copyright 2021 C0rp Industries
 echo Version: 0.01 (GitHub Development Build)
@@ -121,12 +119,10 @@ echo[
 ::Easier to manage options menu
 
 set /p "menudebug=Selected option: "
-if "%menudebug%" equ "8" goto experimental
 if "%menudebug%" equ "disable.debug" set "debug=off" & goto menu
 if "%menudebug%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
-if "%menudebug%" equ "secret" goto judgement
 if "%menudebug%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
-if "%menudebug%" equ "7" goto content
+if "%menudebug%" equ "7" goto experimental
 if "%menudebug%" equ "6" goto jesusinfo
 if "%menudebug%" equ "5" goto directorylist
 if "%menudebug%" equ "4" goto credits
@@ -161,10 +157,12 @@ echo Use at your own risk.
 echo[
 echo Current Experimental Features:
 echo 1. Delete Intro Configuration File (Makes the terms and conditions screen appear on launch)
+echo 2. Uninstall JesusAI
 echo[
 echo More features will be added soon (maybe).
 echo You can also type anything else to go back to the menu.
 set /p "experimental=Activate feature: "
+if "%experimental%" equ "2" goto areyousure2
 if "%experimental%" equ "1" goto areyousure1
 goto debugmenu
 
@@ -182,6 +180,37 @@ if "%areyousure1%" equ "y" del "%temp%\verify.txt" & goto completed1
 if "%areyousure1%" equ "N" goto experimental
 if "%areyousure1%" equ "n" goto experimental
 goto areyousure1
+
+:areyousure2
+cls
+echo Are you sure you want to uninstall JesusAI?
+echo This will delete all files relating to JesusAI.
+echo If you want to reinstall the game, visit the GitHub page.
+echo Respond with Y to delete, or N to return to the Experimental Features menu.
+set /p "areyousure2=?: "
+if "%areyousure2%" equ "Y" goto reallysure2
+if "%areyousure2%" equ "y" goto reallysure2
+if "%areyousure2%" equ "N" goto experimental
+if "%areyousure2%" equ "n" goto experimental
+goto areyousure2
+
+:reallysure2
+cls
+echo Are you REALLY sure you want to uninstall JesusAI?
+echo Only do this if you really want to delete it or fix an issue.
+echo Respond with Y to delete, or N to return to the Experimental Features menu.
+set /p "reallysure2=?: "
+if "%reallysure2%" equ "Y" goto uninstall
+if "%reallysure2%" equ "y" goto uninstall
+if "%reallysure2%" equ "N" goto experimental
+if "%reallysure2%" equ "n" goto experimental
+goto reallysure2
+
+:uninstall
+del "%temp%\verify.txt"
+cd %localhost%
+del "JesusA.I.bat"
+exit
 
 :completed1
 cls
