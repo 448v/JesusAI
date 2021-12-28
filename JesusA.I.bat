@@ -12,7 +12,13 @@ if not exist "%temp%\verify.txt" (
     echo .> verify.txt
     goto termsandconditions
 )
-goto menu
+goto endingchecker
+
+:endingchecker
+if exist "%temp%\ending1.txt" if exist "%temp%\ending2.txt" if exist "%temp%\ending3.txt" goto menudeluxe
+if not exist "%temp%\ending1.txt" goto menu
+if not exist "%temp%\ending2.txt" goto menu
+if not exist "%temp%\ending3.txt" goto menu
 
 :termsandconditions
 color 1f
@@ -45,10 +51,12 @@ echo If you do not agree, please close the game now.
 echo[
 set /p "terms=?: "
 if "%terms%" equ "qweha8ds78dagdbahl2" exit
-goto menu
+goto endingchecker
+
+
 
 :menu
-color 0c
+color 0d
 cls
 echo  _____                                  ______  ______     
 echo /\___ \                                /\  _  \/\__  _\    
@@ -58,7 +66,7 @@ echo   /\ \_\ \/\  __//\__, `\ \ \_\ \/\__, `\\ \ \/\ \ \_\ \__
 echo   \ \____/\ \____\/\____/\ \____/\/\____/ \ \_\ \_\/\_____\
 echo    \/___/  \/____/\/___/  \/___/  \/___/   \/_/\/_/\/_____/
 echo[
-color 0c
+color 0d
 echo Welcome to the Alpha version of JesusAI.
 echo Please select an option.
 echo 1. Start Experience
@@ -74,6 +82,8 @@ echo This version is probably unstable.
 echo Expect random crashes or glitches.
 echo[
 set /p "menu=Selected option: "
+if "%menu%" equ "password" goto password
+if "%menu%" equ "2f150" goto calibrate
 if "%menu%" equ "enable.debug" set "debug=on" & goto :debugmenu
 if "%menu%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
 if "%menu%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
@@ -84,7 +94,7 @@ if "%menu%" equ "1" goto jesusai
 goto menu
 
 :debugmenu
-color 0c
+color 0d
 cls
 echo  _____                                  ______  ______     
 echo /\___ \                                /\  _  \/\__  _\    
@@ -94,7 +104,7 @@ echo   /\ \_\ \/\  __//\__, `\ \ \_\ \/\__, `\\ \ \/\ \ \_\ \__
 echo   \ \____/\ \____\/\____/\ \____/\/\____/ \ \_\ \_\/\_____\
 echo    \/___/  \/____/\/___/  \/___/  \/___/   \/_/\/_/\/_____/
 echo[
-color 0c
+color 0d
 echo DEBUG OPTIONS ENABLED!
 echo Enter "disable.debug" to disable debug options.
 echo[
@@ -119,6 +129,8 @@ echo[
 ::Easier to manage options menu
 
 set /p "menudebug=Selected option: "
+if "%menudebug%" equ "password" goto password
+if "%menudebug%" equ "2f150" goto calibrate
 if "%menudebug%" equ "disable.debug" set "debug=off" & goto menu
 if "%menudebug%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
 if "%menudebug%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
@@ -130,6 +142,24 @@ if "%menudebug%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
 if "%menudebug%" equ "2" exit
 if "%menudebug%" equ "1" goto jesusai
 goto debugmenu
+
+:password
+cls
+set /p "passwordsecret=Password: "
+if "%passwordsecret%" equ "3813" goto acceptedstep
+goto menu
+
+:acceptedstep
+echo .> %temp%\exist.txt
+goto accepted
+
+:accepted
+cls
+echo Password accepted
+echo Type anything to go back
+set /p "accepted=?: "
+if "%accepted%" equ "q8y234guiegharlyuwafuaetfv" exit
+goto menu
 
 :experimental
 cls
@@ -219,6 +249,62 @@ echo Type anything to return to the Experimental Features menu.
 set /p "completed1=?: "
 if "%completed1%" equ "saoihdhoisadfsad7dsad87d9sad799ad" exit
 goto experimental
+
+:calibrate
+cls
+color 4f
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@@  @@ ,@ @@ @@@ @@@ @@@   @@  @@  @@@@ @@@ @@@@   @/ @@@ @@@@ #@  *@@  @@@@@    @@@        @  @@@
+echo @@@@   @@%     @@@ @@@@@@    @@  @        @@@ @@   @@@/ @@@ @  @@@@@ *@@  @@  @@(  @@@ @@ @   @  @@@
+echo @@@@ (@ @%     @@@  @@@      @@    @@   @ @@@ @@ @   @/ @@@    @ #@  *@@  @ @@ @@@ @@@   @@@@ @  @@@
+echo @@@@     ,@    @@@    @   @  @@    @@@@@  @@@   @@      @@@ @    #@  *@@  @ @@@    @@@     @@ @  @@@
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@@           @@@           @@           @@@           @@@          *@@           @@@           @@@
+echo @@@@ (@ @@@    @@@  @@@@@    @@   @  @@@  @@@    @@@    @@@ @   @* @ *@@  @        @@@    @  @   @@@
+echo @@@@ (@*@ *#   @@@  ##*@@#*  @@  @@@@*  @ @@@   *****#, @@@ @@@# /#@ *@@  *#####%@ @@@ @@ ###@*  @@@
+echo @@@@ (@    @   @@@ @   @@@@  @@  @@@@@@@  @@@ @@ @@@    @@@    @@@@  *@@  @   @ /@ @@@        @  @@@
+echo @@@@           @@@           @@           @@@           @@@          *@@           @@@           @@@
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@@    @% @@@ @@@  @@       @@   @@@@  @ @@@ @@     @/ @@@ @    #@@ *@@  @   @@@@ @@@ @@@    @  @@@
+echo @@@@           @@@ @@@   @@  @@    @@ @@@ @@@   @@  @   @@@ @    #@  *@@   @  @    @@@ @@@@  @   @@@
+echo @@@@ (@    @@@ @@@  @@ @@ @  @@  @ @@ @@  @@@ @@ @@@    @@@    @@*   *@@  @@@@@@(  @@@ @@    @   @@@
+echo @@@@ (@@@%     @@@  @@    @  @@   @@@@    @@@ @@@       @@@ @@@@ #@  *@@   @   @@@ @@@     @@ @  @@@
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@@           @@@           @@           @@@           @@@          *@@           @@@           @@@
+echo @@@@ (@@ ,@@   @@@    @@@@@  @@    @@     @@@ @@    @   @@@ @@@ @@@@ *@@  @   @@(  @@@           @@@
+echo @@@@    @% @@@ @@@ @      @  @@   @  @@@  @@@ @@ @   @/ @@@ @  @@*   *@@  @@@@@ /@ @@@    @@@@@  @@@
+echo @@@@     ,@@   @@@ @@@@@@ @  @@  @ @@   @ @@@    @  @   @@@      #@@ *@@    @@     @@@ @@ @  @   @@@
+echo @@@@           @@@           @@           @@@           @@@          *@@           @@@           @@@
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@@   @@% @@@ @@@ @   @@@   @@    @@@    @@@   @   @   @@@  @@ @*   *@@   @@@  /@ @@@ @@  @@ @  @@@
+echo @@@@   @@@@@   @@@    @  @@  @@  @ @@   @ @@@ @@@@@@@@/ @@@     @@@@ *@@   @@@@ /@ @@@ @@@ @@ @  @@@
+echo @@@@ / @...    @@@ .      @  @@   @       @@@ ..@  @  * @@@  ..  ..@ *@@  .@  .  @ @@@ ..    @@  @@@
+echo @@@@   @@% @@@ @@@  @@ @@@@  @@  @ @@   @ @@@      @@@/ @@@  @@    @ *@@  @ @@@@@@ @@@    @@@@   @@@
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo[
+echo                                           ENTER PASSPHRASE
+set /p "calibrate=?: "
+if "%calibrate%" equ "manifest" goto stepverify
+exit
+
+:stepverify
+if not exist "%temp%\exist.txt" (
+    goto menu
+)
+goto step2
+
+:step2
+echo THANK YOU FOR ASSUMING THE POSITION
+echo YOU ARE ON YOUR WAY TO GREAT SUCCESS
+echo[
+echo PASSCODE ENDING (NON-CANON)
+echo TYPE ANYTHING TO GO BACK 
+set /p "step2=?: "
+if "%step2%" equ "wqgyyukwuwkygeygwegaey123123" exit
+goto menu
 
 :content
 cls
@@ -346,11 +432,17 @@ echo 1. Start Experience
 echo 2. Exit
 echo 3. Return to the new JesusAI
 set /p "oldmenu=Selected option: "
-if "%oldmenu%" equ "1" goto oldjesusai
+if "%oldmenu%" equ "1" goto caviat
 if "%oldmenu%" equ "2" exit
 if "%oldmenu%" equ "3" goto menu
 if "%oldmenu%" equ "4" goto oldjudgement
 goto oldmenu
+
+:caviat
+cls
+cd %localhost%
+echo Input password into the main menu to see a surprise > Read.txt
+goto oldjesusai
 
 :oldjudgement
 cls
@@ -439,7 +531,7 @@ goto oldmenu
 :oldhello
 cls 
 echo Hello. A%%%%%@@£$£$"%"^NYThING else you would like to ask my disciple?
-
+echo[
 echo                 I
 echo                 I
 echo                 I
@@ -640,8 +732,10 @@ echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
 echo "Who are you?"
 echo "What is JesusAI?"
+echo You can also type "5" to go back.
 echo[
 set /p "whoareyou=Ask Jesus: "
+if "%whoareyou%" equ "5" goto jesusai2
 if "%whoareyou%" equ "What is JesusAI?" goto whatisjesusai
 if "%whoareyou%" equ "What is JesusAI" goto whatisjesusai
 if "%whoareyou%" equ "what is jesusai?" goto whatisjesusai
@@ -681,8 +775,10 @@ echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
 echo "Who are you?"
 echo "What is JesusAI?"
+echo You can also type "5" to go back.
 echo[
 set /p "whatisjesusai=Ask Jesus: "
+if "%whatisjesusai%" equ "5" goto jesusai2
 if "%whatisjesusai%" equ "What is JesusAI?" goto whatisjesusai
 if "%whatisjesusai%" equ "What is JesusAI" goto whatisjesusai
 if "%whatisjesusai%" equ "what is jesusai?" goto whatisjesusai
@@ -731,6 +827,7 @@ echo 1. (your text) Ask Jesus a question.
 echo 2. Beg for forgiveness.
 echo 3. Escape.
 echo 4. ?̶̋̓͛̂͌͆͝
+echo 5. Go Back
 echo[
 echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
@@ -738,6 +835,7 @@ echo "Who are you?"
 echo "What is JesusAI?"
 
 set /p "hello=Ask Jesus: "
+if "%hello%" equ "5" goto jesusai2
 if "%hello%" equ "4" goto payloadtohell
 if "%hello%" equ "hi" goto hello
 if "%hello%" equ "Hi" goto hello
@@ -752,6 +850,85 @@ if "%hello%" equ "What is JesusAI" goto whatisjesusai
 if "%hello%" equ "what is jesusai?" goto whatisjesusai
 if "%hello%" equ "What is jesusai" goto whatisjesusai
 goto hello
+
+:jesusai2
+cls 
+color 0b
+echo                          ASK HIM WHAT THE CODE IS.
+echo                            ,($$ @  @(/  / $ ./.                                
+echo                         (@                       $@                           
+echo                     .$                               $                        
+echo                   $$                 .@                 $                      
+echo                 /                 .@. .@                ,                    
+echo                /              ,$@(       ,$/             (                    
+echo                @        $@$(.                $@$ .//      @                   
+echo               $,       @$                           ,@      (                  
+echo               @       $.                              $(    .                
+echo              $     $$                                  @    (                
+echo             $    $/                                   $     @                
+echo            .$       @    ,(@@$/,$          ,$,/$$$    ./     @                
+echo           $(        $.     ($@               $$$,      @      @                
+echo          $/         .$    ,@@@$.     .      ($$$(.    (       $                
+echo          @.          @               /                $       $                
+echo          $/          @.              ,                @       /.               
+echo           $          $.                               $        ((              
+echo            @        .@             .    ,             ,/        $$             
+echo            $,       $@,             .@$(             (/$          @            
+echo            @        $$ @     __.$$ #     #$$$__    $$ ,($         ,$           
+echo         $@.         @$  \ #/$@/@     #$$#/$#    #$/  $(./           $          
+echo        @            @ $         (@. ~~~~~  $,         ,$           ,@          
+echo       /(            ,.$       ( @    $$$    $ .      //            ,@          
+echo       $,             .,.         $$$    $/$/        $              $          
+echo       @            ,   $,                         $@              $@           
+echo       $            ,    @$@                     $,@ @.           $            
+echo        $             $$@@@$(                     $ ($/            /           
+echo         @.             @.@  $                   $  ,$@ .(         @.          
+echo          ,$            $$@     @              $.   ,$ @@         /$        
+echo          $ $,          $. $     .@.         /$     $$ /$        $$       
+echo            @$         .@  $,       @    .@/        @  $$      $(               
+echo           @         ($     @        .(@.@         ,$  ,$     @                 
+echo          /(       ,/ $,    .@          $          $.   @      $@.              
+echo           @       .   ,$    $@                    @     $        $             
+echo            @           .(    ,$                  $$       $/     @             
+echo             (@          @$    @                 .@        $@,   ,$             
+echo               .@       ,, $@$.($                @    .$@(  $,  .@,             
+echo                 //    .(      ,$@@@$$/,.     ,($@@@$,      @  $@.              
+echo                  @  .@.                                  @. .@@                
+echo                 ,/$.                                    $  @, @                                   
+echo 1. (your text) Ask Jesus a question.
+echo 2. Beg for forgiveness.
+echo 3. Escape.
+echo[
+echo CURRENT PROMPTS TO ASK JESUS
+echo "Hello"
+echo "Who are you?"
+echo "What is JesusAI?"
+echo[
+set /p "jesusai4=Ask Jesus: "
+if "%jesusai4%" equ "2" goto judgement
+if "%jesusai4%" equ "3" goto payloadtoerror
+if "%jesusai4%" equ "What is the code?" goto code
+if "%jesusai4%" equ "what is the code?" goto code
+if "%jesusai4%" equ "what is the code" goto code
+if "%jesusai4%" equ "What is the code" goto code
+if "%jesusai4%" equ "What is JesusAI?" goto whatisjesusai
+if "%jesusai4%" equ "What is JesusAI" goto whatisjesusai
+if "%jesusai4%" equ "what is jesusai?" goto whatisjesusai
+if "%jesusai4%" equ "What is jesusai" goto whatisjesusai
+if "%jesusai4%" equ "hi" goto hello
+if "%jesusai4%" equ "Hi" goto hello
+if "%jesusai4%" equ "hello" goto hello
+if "%jesusai4%" equ "Hello" goto hello
+if "%jesusai4%" equ "who are you?" goto whoareyou
+if "%jesusai4%" equ "Who are you?" goto whoareyou
+if "%jesusai4%" equ "who are you" goto whoareyou
+if "%jesusai4%" equ "Who are you" goto whoareyou
+goto jesusai2
+
+:code
+cls
+echo 2f150>R.txt
+goto menu
 
 :payloadtohell
 cls
@@ -830,11 +1007,11 @@ goto hellpart4
 cls
 echo You have answered all 3 riddles correctly, %USERNAME%.
 echo Your computer's information is safe.
-echo Type "return" to close JesusAI.
+echo Type anything to go back to the menu.
 echo[
 color 0f
 echo RIDDLE ENDING
-echo RIDDLE ENDING unlocked. Ending unlocked at %date% %time%. >>"%~dp0unlockedEndings.txt"
-set /p "hellfinale=Response: "
-if "%hellfinale%" equ "return" goto menu
-goto hellfinale
+echo The End 1 %date% %time% >"%temp%\ending1.txt"
+set /p "hellfinale=?: "
+if "%hellfinale%" equ "agysdaysugdasodgy13948y712398" exit
+goto menu
