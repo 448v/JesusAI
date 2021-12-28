@@ -53,8 +53,6 @@ set /p "terms=?: "
 if "%terms%" equ "qweha8ds78dagdbahl2" exit
 goto endingchecker
 
-
-
 :menu
 color 0d
 cls
@@ -82,8 +80,9 @@ echo This version is probably unstable.
 echo Expect random crashes or glitches.
 echo[
 set /p "menu=Selected option: "
+if "%menu%" equ "repent" goto repent
 if "%menu%" equ "password" goto password
-if "%menu%" equ "2f150" goto calibrate
+if "%menu%" equ "calibrate" goto calibrate
 if "%menu%" equ "enable.debug" set "debug=on" & goto :debugmenu
 if "%menu%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
 if "%menu%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
@@ -129,8 +128,9 @@ echo[
 ::Easier to manage options menu
 
 set /p "menudebug=Selected option: "
+if "%menudebug%" equ "repent" goto repent
 if "%menudebug%" equ "password" goto password
-if "%menudebug%" equ "2f150" goto calibrate
+if "%menudebug%" equ "calibrate" goto calibrate
 if "%menudebug%" equ "disable.debug" set "debug=off" & goto menu
 if "%menudebug%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
 if "%menudebug%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
@@ -142,6 +142,21 @@ if "%menudebug%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
 if "%menudebug%" equ "2" exit
 if "%menudebug%" equ "1" goto jesusai
 goto debugmenu
+
+:repent
+cls
+echo Diary Entry: 12/09/1977
+echo I have found a specific set of instructions you can do within the experience to unlock... something.
+echo Type "password" on the main menu screen and input "3813".
+echo Next, once you're back in the menu, type "calibrate".
+echo The screen requires a password of some sort, but I don't know what it is.
+echo Try searching around the program to see what you can find.
+echo[
+echo Type anything to return to the menu.
+echo[
+set /p "repent=?: "
+if "%repent%" equ "sbhdjfvhejhgwv3u2yg423ygvu4v234y" exit
+goto menu
 
 :password
 cls
@@ -297,50 +312,15 @@ if not exist "%temp%\exist.txt" (
 goto step2
 
 :step2
+echo The End 2 %date% %time% >"%temp%\ending2.txt"
 echo THANK YOU FOR ASSUMING THE POSITION
 echo YOU ARE ON YOUR WAY TO GREAT SUCCESS
 echo[
-echo PASSCODE ENDING (NON-CANON)
+echo PASSCODE ENDING
 echo TYPE ANYTHING TO GO BACK 
 set /p "step2=?: "
 if "%step2%" equ "wqgyyukwuwkygeygwegaey123123" exit
 goto menu
-
-:content
-cls
-echo                  __                 __      __             __     
-echo                 /\ \               /\ \    /\ \           /\ \    
-echo    __    ___ ___\ \ \____     __   \_\ \   \_\ \     __   \_\ \   
-echo  /'__`\/' __` __`\ \ '__`\  /'__`\ /'_` \  /'_` \  /'__`\ /'_` \  
-echo /\  __//\ \/\ \/\ \ \ \L\ \/\  __//\ \L\ \/\ \L\ \/\  __//\ \L\ \ 
-echo \ \____\ \_\ \_\ \_\ \_,__/\ \____\ \___,_\ \___,_\ \____\ \___,_\
-echo  \/____/\/_/\/_/\/_/\/___/  \/____/\/__,_ /\/__,_ /\/____/\/__,_ /                                                    
-echo                      __                  __                       
-echo                     /\ \__              /\ \__                    
-echo   ___    ___     ___\ \ ,_\    __    ___\ \ ,_\                   
-echo  /'___\ / __`\ /' _ `\ \ \/  /'__`\/' _ `\ \ \/                   
-echo /\ \__//\ \L\ \/\ \/\ \ \ \_/\  __//\ \/\ \ \ \_                  
-echo \ \____\ \____/\ \_\ \_\ \__\ \____\ \_\ \_\ \__\                 
-echo  \/____/\/___/  \/_/\/_/\/__/\/____/\/_/\/_/\/__/                                                                                   
-echo[
-echo This page shows all links + images used in JesusAI.
-echo This will be updated periodically as new content is added.
-echo This is to ensure everything works correctly.
-echo[
-echo CONTENT LIST:
-echo 1. Secret Jesus Gif (in Main Menu)
-echo 2. GitHub Repository
-echo 3. Ominous Jesus Photo (in Judgement)
-echo 4. Middle Finger (in Main Menu)
-echo[
-echo Type "back" to go back.
-set /p "embedded=Selected option: "
-if "%embedded%" equ "back" goto debugmenu
-if "%embedded%" equ "4" start "" "https://i.imgur.com/SEhpuRg.jpg"
-if "%embedded%" equ "3" start "" http://i.ibb.co/T0yZQGz/repent.png
-if "%embedded%" equ "2" start "" "https://github.com/JesusAIexperience/JesusAI"
-if "%embedded%" equ "1" start "" https://i.imgur.com/DCtv3fR.gif
-goto content
 
 :directorylist
 cls
@@ -629,7 +609,8 @@ echo                      '-=====-'
 echo             YOUR JUDGEMENT HAS ALMOST
 echo                      ARRIVED.
 echo[
-echo                      REPENT.
+echo              ENTER "REPENT" ON THE
+echo              MENU SCREEN TO REPENT.
 echo[
 echo         TYPE / PRESS ANYTHING TO RETURN TO
 echo                     THE MENU.
@@ -927,7 +908,7 @@ goto jesusai2
 
 :code
 cls
-echo 2f150>R.txt
+echo manifest>R.txt
 goto menu
 
 :payloadtohell
@@ -1011,7 +992,7 @@ echo Type anything to go back to the menu.
 echo[
 color 0f
 echo RIDDLE ENDING
-echo The End 1 %date% %time% >"%temp%\ending1.txt"
+echo The End 1 %date% %time%> "%temp%\ending1.txt"
 set /p "hellfinale=?: "
 if "%hellfinale%" equ "agysdaysugdasodgy13948y712398" exit
 goto menu
