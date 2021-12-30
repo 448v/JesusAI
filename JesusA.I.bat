@@ -5,6 +5,11 @@
 @echo off
 title JesusAI (Infdev Build)
 
+::Runs on startup
+::Checks if "verify.txt" exists (to identify if the game has been ran before)
+::If file exists, instantly send to menu
+::If not, create file & send to intro screen
+
 :info
 cls
 if not exist "%temp%\verify.txt" (
@@ -14,8 +19,15 @@ if not exist "%temp%\verify.txt" (
 )
 goto endingchecker
 
+::Checks if all three endings are acquired
+::Each ending will write a text file to the specified directory (in this case, %temp%)
+::If all three exist, send to the menu with the DLC feature
+::If not, send to regular menu
+
 :endingchecker
+if exist "%temp%\ending1.txt" if exist "%temp%\ending2.txt" if exist "%temp%\ending3.txt" if exist "%temp%\debug.txt" goto debugmenudeluxe
 if exist "%temp%\ending1.txt" if exist "%temp%\ending2.txt" if exist "%temp%\ending3.txt" goto menudeluxe
+if exist "%temp%\debug.txt" goto debugmenu
 if not exist "%temp%\ending1.txt" goto menu
 if not exist "%temp%\ending2.txt" goto menu
 if not exist "%temp%\ending3.txt" goto menu
@@ -74,7 +86,7 @@ echo 4. Credits
 echo[
 echo Copyright 2021 C0rp Industries
 echo Version: 0.01 (GitHub Development Build)
-echo Last update: 27/12/2021
+echo Last update: 29/12/2021
 echo[
 echo This version is probably unstable.
 echo Expect random crashes or glitches.
@@ -83,7 +95,7 @@ set /p "menu=Selected option: "
 if "%menu%" equ "repent" goto repent
 if "%menu%" equ "password" goto password
 if "%menu%" equ "calibrate" goto calibrate
-if "%menu%" equ "enable.debug" set "debug=on" & goto :debugmenu
+if "%menu%" equ "enable.debug" cd %temp% & echo .> debug.txt & goto debugmenu
 if "%menu%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
 if "%menu%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
 if "%menu%" equ "4" goto credits
@@ -119,19 +131,16 @@ echo 7. (DEBUG) Experimental Features
 echo[
 echo Copyright 2021 C0rp Industries
 echo Version: 0.01 (GitHub Development Build)
-echo Last update: 27/12/2021
+echo Last update: 29/12/2021
 echo[
 echo This version is probably unstable.
 echo Expect random crashes or glitches.
 echo[
-
-::Easier to manage options menu
-
 set /p "menudebug=Selected option: "
 if "%menudebug%" equ "repent" goto repent
 if "%menudebug%" equ "password" goto password
 if "%menudebug%" equ "calibrate" goto calibrate
-if "%menudebug%" equ "disable.debug" set "debug=off" & goto menu
+if "%menudebug%" equ "disable.debug" del "%temp%\debug.txt" & goto endingchecker
 if "%menudebug%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
 if "%menudebug%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
 if "%menudebug%" equ "7" goto experimental
@@ -142,6 +151,135 @@ if "%menudebug%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
 if "%menudebug%" equ "2" exit
 if "%menudebug%" equ "1" goto jesusai
 goto debugmenu
+
+:menudeluxe
+color 0d
+cls
+echo  _____                                  ______  ______     
+echo /\___ \                                /\  _  \/\__  _\    
+echo \/__/\ \     __    ____  __  __    ____\ \ \L\ \/_/\ \/    
+echo    _\ \ \  /'__`\ /',__\/\ \/\ \  /',__\\ \  __ \ \ \ \    
+echo   /\ \_\ \/\  __//\__, `\ \ \_\ \/\__, `\\ \ \/\ \ \_\ \__ 
+echo   \ \____/\ \____\/\____/\ \____/\/\____/ \ \_\ \_\/\_____\
+echo    \/___/  \/____/\/___/  \/___/  \/___/   \/_/\/_/\/_____/
+echo[
+color 0d
+echo Welcome to the Alpha version of JesusAI.
+echo Please select an option.
+echo 1. Start Experience
+echo 2. Close Experience
+echo 3. Open GitHub Repository Page
+echo 4. Credits
+echo 5. Open Cartridges Menu (DLC)
+echo[
+echo Copyright 2021 C0rp Industries
+echo Version: 0.01 (GitHub Development Build)
+echo Last update: 29/12/2021
+echo[
+echo This version is probably unstable.
+echo Expect random crashes or glitches.
+echo[
+set /p "menudeluxe=Selected option: "
+if "%menudeluxe%" equ "repent" goto repent
+if "%menudeluxe%" equ "password" goto password
+if "%menudeluxe%" equ "calibrate" goto calibrate
+if "%menudeluxe%" equ "enable.debug" cd %temp% & echo .> debug.txt & goto debugmenudeluxe
+if "%menudeluxe%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
+if "%menudeluxe%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
+if "%menudeluxe%" equ "5" goto cartridges
+if "%menudeluxe%" equ "4" goto credits
+if "%menudeluxe%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
+if "%menudeluxe%" equ "2" exit
+if "%menudeluxe%" equ "1" goto jesusai
+goto menu
+
+:debugmenudeluxe
+color 0d
+cls
+echo  _____                                  ______  ______     
+echo /\___ \                                /\  _  \/\__  _\    
+echo \/__/\ \     __    ____  __  __    ____\ \ \L\ \/_/\ \/    
+echo    _\ \ \  /'__`\ /',__\/\ \/\ \  /',__\\ \  __ \ \ \ \    
+echo   /\ \_\ \/\  __//\__, `\ \ \_\ \/\__, `\\ \ \/\ \ \_\ \__ 
+echo   \ \____/\ \____\/\____/\ \____/\/\____/ \ \_\ \_\/\_____\
+echo    \/___/  \/____/\/___/  \/___/  \/___/   \/_/\/_/\/_____/
+echo[
+color 0d
+echo DEBUG OPTIONS ENABLED!
+echo Enter "disable.debug" to disable debug options.
+echo[
+echo Welcome to the Alpha version of JesusAI.
+echo Please select an option.
+echo 1. Start Experience
+echo 2. Close Experience
+echo 3. Open GitHub Repository Page
+echo 4. Credits
+echo 5. Open Cartridges Menu (DLC)
+echo 6. (DEBUG) List Directories
+echo 7. (DEBUG) JesusAI Info
+echo 8. (DEBUG) Experimental Features
+echo[
+echo Copyright 2021 C0rp Industries
+echo Version: 0.01 (GitHub Development Build)
+echo Last update: 29/12/2021
+echo[
+echo This version is probably unstable.
+echo Expect random crashes or glitches.
+echo[
+set /p "menudebugdeluxe=Selected option: "
+if "%menudebugdeluxe%" equ "repent" goto repent
+if "%menudebugdeluxe%" equ "password" goto password
+if "%menudebugdeluxe%" equ "calibrate" goto calibrate
+if "%menudebugdeluxe%" equ "disable.debug" del "%temp%\debug.txt" & goto endingchecker
+if "%menudebugdeluxe%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
+if "%menudebugdeluxe%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
+if "%menudebugdeluxe%" equ "8" goto experimental
+if "%menudebugdeluxe%" equ "7" goto info
+if "%menudebugdeluxe%" equ "6" goto directories
+if "%menudebugdeluxe%" equ "5" goto cartridges
+if "%menudebugdeluxe%" equ "4" goto credits
+if "%menudebugdeluxe%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
+if "%menudebugdeluxe%" equ "2" exit
+if "%menudebugdeluxe%" equ "1" goto jesusai
+goto debugmenudeluxe
+
+
+:cartridges
+cls
+title JesusAI (Infdev Build)
+color 0e
+echo                       __                   __                           
+echo                      /\ \__         __    /\ \                          
+echo   ___     __     _ __\ \ ,_\  _ __ /\_\   \_\ \     __      __    ____  
+echo  /'___\ /'__`\  /\`'__\ \ \/ /\`'__\/\ \  /'_` \  /'_ `\  /'__`\ /',__\ 
+echo /\ \__//\ \L\.\_\ \ \/ \ \ \_\ \ \/ \ \ \/\ \L\ \/\ \L\ \/\  __//\__, `\
+echo \ \____\ \__/.\_\\ \_\  \ \__\\ \_\  \ \_\ \___,_\ \____ \ \____\/\____/
+echo  \/____/\/__/\/_/ \/_/   \/__/ \/_/   \/_/\/__,_ /\/___L\ \/____/\/___/ 
+echo                                                     /\____/             
+echo                                                     \_/__/              
+echo[
+echo Welcome to the Cartridges menu!
+echo Cartridges serve as extra optional DLC you can download.
+echo You can only run Cartridges that you have downloaded.
+echo If the specific Cartridge you want to run isn't downloaded, it will not run.
+echo Make sure all Cartridges are placed in the directory where JesusAI is located!
+echo Choose from one of the options:
+echo[
+echo Choose from one of these options:
+echo 1. Open the Cartridges Download Page
+echo 2. Run Cartridge 1
+echo 3. Run Cartridge 2
+echo 4. Run Cartridge 3
+echo 5. Run Cartridge 0
+echo 6. Go Back to Main Menu
+set /p "cartridges=Selected option: "
+if "%cartridges%" equ "1" start "" "https://github.com/schneerocket/JesusAI-Cartridges"
+if "%cartridges%" equ "2" call "BATCHNAME.bat"
+if "%cartridges%" equ "3" call "BATCHNAME.bat"
+if "%cartridges%" equ "4" call "BATCHNAME.bat"
+if "%cartridges%" equ "5" call "cartridge.bat"
+if "%cartridges%" equ "6" goto menudeluxe
+goto cartridges
 
 :repent
 cls
@@ -156,7 +294,10 @@ echo Type anything to return to the menu.
 echo[
 set /p "repent=?: "
 if "%repent%" equ "sbhdjfvhejhgwv3u2yg423ygvu4v234y" exit
-goto menu
+goto quickflash
+
+:quickflash
+goto code
 
 :password
 cls
@@ -355,8 +496,10 @@ echo 17. Old JesusAI (Easter Egg on Credits Screen)
 echo 18. Terms and Conditions Menu
 echo DISCLAIMER: It's recommended not to go here since it could break JesusAI
 echo You've been warned.
+echo 19. Cartridges Menu
 echo[
 set /p "directories=Directory you want to travel to: "
+if "%directories%" equ "19" goto cartridges
 if "%directories%" equ "18" goto termsandconditions
 if "%directories%" equ "17" goto oldmenu
 if "%directories%" equ "16" goto directorylist   
@@ -392,11 +535,12 @@ echo Code written by @schneerocket and @download_free_ram69 on Instagram
 echo Project concept established in Late 2019 as a joke
 echo Project fully started in December 2021
 echo Repository hosted on GitHub
+echo Thanks StackOverflow
 echo[
 echo Type "back" to go back.
 set /p "credits=Response: "
 if "%credits%" equ "unlock" goto oldmenu
-if "%credits%" equ "back" goto menu
+if "%credits%" equ "back" goto endingchecker
 
 :oldmenu
 color 0a
@@ -412,17 +556,11 @@ echo 1. Start Experience
 echo 2. Exit
 echo 3. Return to the new JesusAI
 set /p "oldmenu=Selected option: "
-if "%oldmenu%" equ "1" goto caviat
+if "%oldmenu%" equ "1" goto oldjesusai
 if "%oldmenu%" equ "2" exit
-if "%oldmenu%" equ "3" goto menu
+if "%oldmenu%" equ "3" goto endingchecker
 if "%oldmenu%" equ "4" goto oldjudgement
 goto oldmenu
-
-:caviat
-cls
-cd %localhost%
-echo Input password into the main menu to see a surprise > Read.txt
-goto oldjesusai
 
 :oldjudgement
 cls
@@ -552,10 +690,10 @@ echo %date% %time%
 echo[
 echo This copy of JesusAI's version is:
 echo 0.01 (GitHub Development Build)
-echo Last update: 27/12/2021
+echo Last update: 29/12/2021
 echo Type "back" to go back.
 set /p "jesusinfo2=Selected option: "
-if "%jesusinfo2%" equ "back" goto debugmenu
+if "%jesusinfo2%" equ "back" goto endingchecker
 goto jesusinfo
 
 :judgement
@@ -609,8 +747,8 @@ echo                      '-=====-'
 echo             YOUR JUDGEMENT HAS ALMOST
 echo                      ARRIVED.
 echo[
-echo              ENTER "REPENT" ON THE
-echo              MENU SCREEN TO REPENT.
+echo               ENTER "REPENT" ON THE
+echo               MENU SCREEN TO REPENT.
 echo[
 echo         TYPE / PRESS ANYTHING TO RETURN TO
 echo                     THE MENU.
@@ -713,10 +851,8 @@ echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
 echo "Who are you?"
 echo "What is JesusAI?"
-echo You can also type "5" to go back.
 echo[
 set /p "whoareyou=Ask Jesus: "
-if "%whoareyou%" equ "5" goto jesusai2
 if "%whoareyou%" equ "What is JesusAI?" goto whatisjesusai
 if "%whoareyou%" equ "What is JesusAI" goto whatisjesusai
 if "%whoareyou%" equ "what is jesusai?" goto whatisjesusai
@@ -756,10 +892,8 @@ echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
 echo "Who are you?"
 echo "What is JesusAI?"
-echo You can also type "5" to go back.
 echo[
 set /p "whatisjesusai=Ask Jesus: "
-if "%whatisjesusai%" equ "5" goto jesusai2
 if "%whatisjesusai%" equ "What is JesusAI?" goto whatisjesusai
 if "%whatisjesusai%" equ "What is JesusAI" goto whatisjesusai
 if "%whatisjesusai%" equ "what is jesusai?" goto whatisjesusai
@@ -808,15 +942,13 @@ echo 1. (your text) Ask Jesus a question.
 echo 2. Beg for forgiveness.
 echo 3. Escape.
 echo 4. ?̶̋̓͛̂͌͆͝
-echo 5. Go Back
 echo[
 echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
 echo "Who are you?"
 echo "What is JesusAI?"
-
+echo[
 set /p "hello=Ask Jesus: "
-if "%hello%" equ "5" goto jesusai2
 if "%hello%" equ "4" goto payloadtohell
 if "%hello%" equ "hi" goto hello
 if "%hello%" equ "Hi" goto hello
@@ -832,84 +964,10 @@ if "%hello%" equ "what is jesusai?" goto whatisjesusai
 if "%hello%" equ "What is jesusai" goto whatisjesusai
 goto hello
 
-:jesusai2
-cls 
-color 0b
-echo                          ASK HIM WHAT THE CODE IS.
-echo                            ,($$ @  @(/  / $ ./.                                
-echo                         (@                       $@                           
-echo                     .$                               $                        
-echo                   $$                 .@                 $                      
-echo                 /                 .@. .@                ,                    
-echo                /              ,$@(       ,$/             (                    
-echo                @        $@$(.                $@$ .//      @                   
-echo               $,       @$                           ,@      (                  
-echo               @       $.                              $(    .                
-echo              $     $$                                  @    (                
-echo             $    $/                                   $     @                
-echo            .$       @    ,(@@$/,$          ,$,/$$$    ./     @                
-echo           $(        $.     ($@               $$$,      @      @                
-echo          $/         .$    ,@@@$.     .      ($$$(.    (       $                
-echo          @.          @               /                $       $                
-echo          $/          @.              ,                @       /.               
-echo           $          $.                               $        ((              
-echo            @        .@             .    ,             ,/        $$             
-echo            $,       $@,             .@$(             (/$          @            
-echo            @        $$ @     __.$$ #     #$$$__    $$ ,($         ,$           
-echo         $@.         @$  \ #/$@/@     #$$#/$#    #$/  $(./           $          
-echo        @            @ $         (@. ~~~~~  $,         ,$           ,@          
-echo       /(            ,.$       ( @    $$$    $ .      //            ,@          
-echo       $,             .,.         $$$    $/$/        $              $          
-echo       @            ,   $,                         $@              $@           
-echo       $            ,    @$@                     $,@ @.           $            
-echo        $             $$@@@$(                     $ ($/            /           
-echo         @.             @.@  $                   $  ,$@ .(         @.          
-echo          ,$            $$@     @              $.   ,$ @@         /$        
-echo          $ $,          $. $     .@.         /$     $$ /$        $$       
-echo            @$         .@  $,       @    .@/        @  $$      $(               
-echo           @         ($     @        .(@.@         ,$  ,$     @                 
-echo          /(       ,/ $,    .@          $          $.   @      $@.              
-echo           @       .   ,$    $@                    @     $        $             
-echo            @           .(    ,$                  $$       $/     @             
-echo             (@          @$    @                 .@        $@,   ,$             
-echo               .@       ,, $@$.($                @    .$@(  $,  .@,             
-echo                 //    .(      ,$@@@$$/,.     ,($@@@$,      @  $@.              
-echo                  @  .@.                                  @. .@@                
-echo                 ,/$.                                    $  @, @                                   
-echo 1. (your text) Ask Jesus a question.
-echo 2. Beg for forgiveness.
-echo 3. Escape.
-echo[
-echo CURRENT PROMPTS TO ASK JESUS
-echo "Hello"
-echo "Who are you?"
-echo "What is JesusAI?"
-echo[
-set /p "jesusai4=Ask Jesus: "
-if "%jesusai4%" equ "2" goto judgement
-if "%jesusai4%" equ "3" goto payloadtoerror
-if "%jesusai4%" equ "What is the code?" goto code
-if "%jesusai4%" equ "what is the code?" goto code
-if "%jesusai4%" equ "what is the code" goto code
-if "%jesusai4%" equ "What is the code" goto code
-if "%jesusai4%" equ "What is JesusAI?" goto whatisjesusai
-if "%jesusai4%" equ "What is JesusAI" goto whatisjesusai
-if "%jesusai4%" equ "what is jesusai?" goto whatisjesusai
-if "%jesusai4%" equ "What is jesusai" goto whatisjesusai
-if "%jesusai4%" equ "hi" goto hello
-if "%jesusai4%" equ "Hi" goto hello
-if "%jesusai4%" equ "hello" goto hello
-if "%jesusai4%" equ "Hello" goto hello
-if "%jesusai4%" equ "who are you?" goto whoareyou
-if "%jesusai4%" equ "Who are you?" goto whoareyou
-if "%jesusai4%" equ "who are you" goto whoareyou
-if "%jesusai4%" equ "Who are you" goto whoareyou
-goto jesusai2
-
 :code
 cls
 echo manifest>R.txt
-goto menu
+goto endingchecker
 
 :payloadtohell
 cls
