@@ -3,7 +3,7 @@
 ::Found an issue? Report it at our repository: https://github.com/JesusAIexperience/JesusAI
 
 @echo off
-title JesusAI (Infdev Build)
+title JesusAI (Dev Build)
 
 ::Runs on startup
 ::Checks if "verify.txt" exists (to identify if the game has been ran before)
@@ -23,6 +23,10 @@ goto endingchecker
 ::Each ending will write a text file to the specified directory (in this case, %temp%)
 ::If all three exist, send to the menu with the DLC feature
 ::If not, send to regular menu
+::Additionally, checks for a debug file
+::If it exists and all other endings exist, go to the hidden menu with debug options enabled
+::If endings don't exist, but debug does, go to regular debug menu
+::If endings and debug file don't exist, go to regular menu
 
 :endingchecker
 if exist "%temp%\ending1.txt" if exist "%temp%\ending2.txt" if exist "%temp%\ending3.txt" if exist "%temp%\debug.txt" goto debugmenudeluxe
@@ -66,7 +70,7 @@ if "%terms%" equ "qweha8ds78dagdbahl2" exit
 goto endingchecker
 
 :menu
-color 0d
+color 0e
 cls
 echo  _____                                  ______  ______     
 echo /\___ \                                /\  _  \/\__  _\    
@@ -76,7 +80,7 @@ echo   /\ \_\ \/\  __//\__, `\ \ \_\ \/\__, `\\ \ \/\ \ \_\ \__
 echo   \ \____/\ \____\/\____/\ \____/\/\____/ \ \_\ \_\/\_____\
 echo    \/___/  \/____/\/___/  \/___/  \/___/   \/_/\/_/\/_____/
 echo[
-color 0d
+color 0e
 echo Welcome to the Alpha version of JesusAI.
 echo Please select an option.
 echo 1. Start Experience
@@ -86,7 +90,7 @@ echo 4. Credits
 echo[
 echo Copyright 2021 C0rp Industries
 echo Version: 0.01 (GitHub Development Build)
-echo Last update: 29/12/2021
+echo Last update: 30/12/2021
 echo[
 echo This version is probably unstable.
 echo Expect random crashes or glitches.
@@ -105,7 +109,7 @@ if "%menu%" equ "1" goto jesusai
 goto menu
 
 :debugmenu
-color 0d
+color 0e
 cls
 echo  _____                                  ______  ______     
 echo /\___ \                                /\  _  \/\__  _\    
@@ -115,7 +119,7 @@ echo   /\ \_\ \/\  __//\__, `\ \ \_\ \/\__, `\\ \ \/\ \ \_\ \__
 echo   \ \____/\ \____\/\____/\ \____/\/\____/ \ \_\ \_\/\_____\
 echo    \/___/  \/____/\/___/  \/___/  \/___/   \/_/\/_/\/_____/
 echo[
-color 0d
+color 0e
 echo DEBUG OPTIONS ENABLED!
 echo Enter "disable.debug" to disable debug options.
 echo[
@@ -131,7 +135,8 @@ echo 7. (DEBUG) Experimental Features
 echo[
 echo Copyright 2021 C0rp Industries
 echo Version: 0.01 (GitHub Development Build)
-echo Last update: 29/12/2021
+echo Last update: 01/01/2022
+echo Happy new year!
 echo[
 echo This version is probably unstable.
 echo Expect random crashes or glitches.
@@ -153,7 +158,7 @@ if "%menudebug%" equ "1" goto jesusai
 goto debugmenu
 
 :menudeluxe
-color 0d
+color 0e
 cls
 echo  _____                                  ______  ______     
 echo /\___ \                                /\  _  \/\__  _\    
@@ -163,7 +168,7 @@ echo   /\ \_\ \/\  __//\__, `\ \ \_\ \/\__, `\\ \ \/\ \ \_\ \__
 echo   \ \____/\ \____\/\____/\ \____/\/\____/ \ \_\ \_\/\_____\
 echo    \/___/  \/____/\/___/  \/___/  \/___/   \/_/\/_/\/_____/
 echo[
-color 0d
+color 0e
 echo Welcome to the Alpha version of JesusAI.
 echo Please select an option.
 echo 1. Start Experience
@@ -174,7 +179,8 @@ echo 5. Open Cartridges Menu (DLC)
 echo[
 echo Copyright 2021 C0rp Industries
 echo Version: 0.01 (GitHub Development Build)
-echo Last update: 29/12/2021
+echo Last update: 01/01/2022
+echo Happy new year!
 echo[
 echo This version is probably unstable.
 echo Expect random crashes or glitches.
@@ -194,7 +200,7 @@ if "%menudeluxe%" equ "1" goto jesusai
 goto menu
 
 :debugmenudeluxe
-color 0d
+color 0e
 cls
 echo  _____                                  ______  ______     
 echo /\___ \                                /\  _  \/\__  _\    
@@ -204,7 +210,7 @@ echo   /\ \_\ \/\  __//\__, `\ \ \_\ \/\__, `\\ \ \/\ \ \_\ \__
 echo   \ \____/\ \____\/\____/\ \____/\/\____/ \ \_\ \_\/\_____\
 echo    \/___/  \/____/\/___/  \/___/  \/___/   \/_/\/_/\/_____/
 echo[
-color 0d
+color 0e
 echo DEBUG OPTIONS ENABLED!
 echo Enter "disable.debug" to disable debug options.
 echo[
@@ -221,7 +227,8 @@ echo 8. (DEBUG) Experimental Features
 echo[
 echo Copyright 2021 C0rp Industries
 echo Version: 0.01 (GitHub Development Build)
-echo Last update: 29/12/2021
+echo Last update: 01/01/2022
+echo Happy new year!
 echo[
 echo This version is probably unstable.
 echo Expect random crashes or glitches.
@@ -235,7 +242,7 @@ if "%menudebugdeluxe%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
 if "%menudebugdeluxe%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
 if "%menudebugdeluxe%" equ "8" goto experimental
 if "%menudebugdeluxe%" equ "7" goto info
-if "%menudebugdeluxe%" equ "6" goto directories
+if "%menudebugdeluxe%" equ "6" goto directorylist
 if "%menudebugdeluxe%" equ "5" goto cartridges
 if "%menudebugdeluxe%" equ "4" goto credits
 if "%menudebugdeluxe%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
@@ -247,7 +254,7 @@ goto debugmenudeluxe
 :cartridges
 cls
 title JesusAI (Infdev Build)
-color 0e
+color 0c
 echo                       __                   __                           
 echo                      /\ \__         __    /\ \                          
 echo   ___     __     _ __\ \ ,_\  _ __ /\_\   \_\ \     __      __    ____  
@@ -282,6 +289,7 @@ if "%cartridges%" equ "6" goto menudeluxe
 goto cartridges
 
 :repent
+color 0a
 cls
 echo Diary Entry: 12/09/1977
 echo I have found a specific set of instructions you can do within the experience to unlock... something.
@@ -690,8 +698,10 @@ echo %date% %time%
 echo[
 echo This copy of JesusAI's version is:
 echo 0.01 (GitHub Development Build)
-echo Last update: 29/12/2021
+echo Last update: 01/01/2022
+echo Happy new year!
 echo Type "back" to go back.
+echo[
 set /p "jesusinfo2=Selected option: "
 if "%jesusinfo2%" equ "back" goto endingchecker
 goto jesusinfo
@@ -1050,6 +1060,7 @@ echo Type anything to go back to the menu.
 echo[
 color 0f
 echo RIDDLE ENDING
+echo[
 echo The End 1 %date% %time%> "%temp%\ending1.txt"
 set /p "hellfinale=?: "
 if "%hellfinale%" equ "agysdaysugdasodgy13948y712398" exit
