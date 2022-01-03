@@ -285,7 +285,7 @@ if "%cartridges%" equ "1" start "" "https://github.com/schneerocket/JesusAI-Cart
 if "%cartridges%" equ "2" call "BATCHNAME.bat"
 if "%cartridges%" equ "3" call "BATCHNAME.bat"
 if "%cartridges%" equ "4" call "BATCHNAME.bat"
-if "%cartridges%" equ "5" call "cartridge.bat"
+if "%cartridges%" equ "5" call "TestCartridge.bat"
 if "%cartridges%" equ "6" goto menudeluxe
 goto cartridges
 
@@ -353,6 +353,7 @@ echo[
 echo Current Experimental Features:
 echo 1. Delete Intro Configuration File (Makes the terms and conditions screen appear on launch)
 echo 2. Uninstall JesusAI
+echo 3. Reset Save Data
 echo[
 echo More features will be added soon (maybe).
 echo You can also type anything else to go back to the menu.
@@ -1065,8 +1066,30 @@ goto jesusconversationpage2
 
 :findx
 cls
-goto endingchecker
-
+color 0e
+echo                  .---.               
+echo             '-.  I   I  .-'         
+echo               ___I   I___          
+echo          -=  [           ]  =-   
+echo              `---.   .---'        
+echo           __II__ I   I __II__    
+echo           '-..-' I   I '-..-'   
+echo             II   I   I   II     
+echo             II_.-I   I-,_II     
+echo           .-"`   `"`'`   `"-.   
+echo         .'                   '. 
+echo[
+echo    HOW... HOW DO YOU KNOW WHO X IS?
+echo[
+echo PROMPTS TO ASK JESUS:
+echo "Don't worry about it."
+echo[
+set /p "findx=?:"
+if "%findx%" equ "Don't worry about it." goto findx2
+if "%findx%" equ "Don't worry about it" goto findx2
+if "%findx%" equ "don't worry about it." goto findx2
+if "%findx%" equ "don't worry about it" goto findx2
+ 
 :creationreal
 cls
 color 0e
