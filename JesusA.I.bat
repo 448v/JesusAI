@@ -90,7 +90,8 @@ echo 4. Credits
 echo[
 echo Copyright 2021 C0rp Industries
 echo Version: 0.01 (GitHub Development Build)
-echo Last update: 30/12/2021
+echo Last update: 03/01/2022
+echo Happy new year!
 echo[
 echo This version is probably unstable.
 echo Expect random crashes or glitches.
@@ -135,7 +136,7 @@ echo 7. (DEBUG) Experimental Features
 echo[
 echo Copyright 2021 C0rp Industries
 echo Version: 0.01 (GitHub Development Build)
-echo Last update: 01/01/2022
+echo Last update: 03/01/2022
 echo Happy new year!
 echo[
 echo This version is probably unstable.
@@ -179,7 +180,7 @@ echo 5. Open Cartridges Menu (DLC)
 echo[
 echo Copyright 2021 C0rp Industries
 echo Version: 0.01 (GitHub Development Build)
-echo Last update: 01/01/2022
+echo Last update: 03/01/2022
 echo Happy new year!
 echo[
 echo This version is probably unstable.
@@ -227,7 +228,7 @@ echo 8. (DEBUG) Experimental Features
 echo[
 echo Copyright 2021 C0rp Industries
 echo Version: 0.01 (GitHub Development Build)
-echo Last update: 01/01/2022
+echo Last update: 03/01/2022
 echo Happy new year!
 echo[
 echo This version is probably unstable.
@@ -698,7 +699,7 @@ echo %date% %time%
 echo[
 echo This copy of JesusAI's version is:
 echo 0.01 (GitHub Development Build)
-echo Last update: 01/01/2022
+echo Last update: 03/01/2022
 echo Happy new year!
 echo Type "back" to go back.
 echo[
@@ -819,10 +820,15 @@ echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
 echo "Who are you?"
 echo "What is JesusAI?"
+echo "Let's talk!"
 echo[
 set /p "jesusai=Ask Jesus: "
 if "%jesusai%" equ "2" goto judgement
 if "%jesusai%" equ "3" goto payloadtoerror
+if "%jesusai%" equ "Let's talk!" goto jesusconversationpage1
+if "%jesusai%" equ "Let's talk" goto jesusconversationpage1
+if "%jesusai%" equ "let's talk!" goto jesusconversationpage1
+if "%jesusai%" equ "let's talk" goto jesusconversationpage1
 if "%jesusai%" equ "What is JesusAI?" goto whatisjesusai
 if "%jesusai%" equ "What is JesusAI" goto whatisjesusai
 if "%jesusai%" equ "what is jesusai?" goto whatisjesusai
@@ -861,8 +867,13 @@ echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
 echo "Who are you?"
 echo "What is JesusAI?"
+echo "Let's talk!"
 echo[
 set /p "whoareyou=Ask Jesus: "
+if "%whoareyou%" equ "Let's talk!" goto jesusconversationpage1
+if "%whoareyou%" equ "Let's talk" goto jesusconversationpage1
+if "%whoareyou%" equ "let's talk!" goto jesusconversationpage1
+if "%whoareyou%" equ "let's talk" goto jesusconversationpage1
 if "%whoareyou%" equ "What is JesusAI?" goto whatisjesusai
 if "%whoareyou%" equ "What is JesusAI" goto whatisjesusai
 if "%whoareyou%" equ "what is jesusai?" goto whatisjesusai
@@ -902,8 +913,13 @@ echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
 echo "Who are you?"
 echo "What is JesusAI?"
+echo "Let's talk!"
 echo[
 set /p "whatisjesusai=Ask Jesus: "
+if "%whatisjesusai%" equ "Let's talk!" goto jesusconversationpage1
+if "%whatisjesusai%" equ "Let's talk" goto jesusconversationpage1
+if "%whatisjesusai%" equ "let's talk!" goto jesusconversationpage1
+if "%whatisjesusai%" equ "let's talk" goto jesusconversationpage1
 if "%whatisjesusai%" equ "What is JesusAI?" goto whatisjesusai
 if "%whatisjesusai%" equ "What is JesusAI" goto whatisjesusai
 if "%whatisjesusai%" equ "what is jesusai?" goto whatisjesusai
@@ -957,8 +973,13 @@ echo CURRENT PROMPTS TO ASK JESUS
 echo "Hello"
 echo "Who are you?"
 echo "What is JesusAI?"
+echo "Let's talk!"
 echo[
 set /p "hello=Ask Jesus: "
+if "%hello%" equ "Let's talk!" goto jesusconversationpage1
+if "%hello%" equ "Let's talk" goto jesusconversationpage1
+if "%hello%" equ "let's talk!" goto jesusconversationpage1
+if "%hello%" equ "let's talk" goto jesusconversationpage1
 if "%hello%" equ "4" goto payloadtohell
 if "%hello%" equ "hi" goto hello
 if "%hello%" equ "Hi" goto hello
@@ -973,6 +994,156 @@ if "%hello%" equ "What is JesusAI" goto whatisjesusai
 if "%hello%" equ "what is jesusai?" goto whatisjesusai
 if "%hello%" equ "What is jesusai" goto whatisjesusai
 goto hello
+
+:jesusconversationpage1
+cls
+color 0e
+echo                  .---.               
+echo             '-.  I   I  .-'         
+echo               ___I   I___          
+echo          -=  [           ]  =-   
+echo              `---.   .---'        
+echo           __II__ I   I __II__    
+echo           '-..-' I   I '-..-'   
+echo             II   I   I   II     
+echo             II_.-I   I-,_II     
+echo           .-"`   `"`'`   `"-.   
+echo         .'                   '. 
+echo[
+echo HELLO [USER], I HAVE IDENTIFIED YOUR NAME IS %USERNAME%,
+echo IS THIS CORRECT?
+echo[
+echo Respond with either "Yes" or "No".
+echo[
+set /p "jesusconversation=?: "
+if "%jesusconversation%" equ "yes" goto jesusconversationpage2
+if "%jesusconversation%" equ "Yes" goto jesusconversationpage2
+if "%jesusconversation%" equ "no" goto endingchecker
+if "%jesusconversation%" equ "No" goto endingchecker
+goto jesusconversationpage1
+
+:jesusconversationpage2
+cls
+color 0e
+echo                  .---.               
+echo             '-.  I   I  .-'         
+echo               ___I   I___          
+echo          -=  [           ]  =-   
+echo              `---.   .---'        
+echo           __II__ I   I __II__    
+echo           '-..-' I   I '-..-'   
+echo             II   I   I   II     
+echo             II_.-I   I-,_II     
+echo           .-"`   `"`'`   `"-.   
+echo         .'                   '. 
+echo[
+echo HELLO %USERNAME%! I AM [JesusAI]! A FULLY SENTIENT
+echo PROGRAM, DESIGNED AFTER [Jesus Christ, Bible Incorporated]!!
+echo WHAT WOULD YOU LIKE TO KNOW?
+echo[
+echo PROMPTS TO ASK JESUS:
+echo "Where do I find X?"
+echo "Why were you created?"
+echo "How were you created?"
+echo[
+set /p "extendedoptions=?: "
+if "%extendedoptions%" equ "Where do I find X?" goto findx
+if "%extendedoptions%" equ "where do I find X?" goto findx
+if "%extendedoptions%" equ "Where do I find X" goto findx
+if "%extendedoptions%" equ "where do I find X" goto findx
+if "%extendedoptions%" equ "Why were you created?" goto creationreal
+if "%extendedoptions%" equ "Why were you created" goto creationreal
+if "%extendedoptions%" equ "why were you created?" goto creationreal
+if "%extendedoptions%" equ "why were you created" goto creationreal
+if "%extendedoptions%" equ "How were you created?" goto howwereyoucreated
+if "%extendedoptions%" equ "How were you created" goto howwereyoucreated
+if "%extendedoptions%" equ "how were you created?" goto howwereyoucreated
+if "%extendedoptions%" equ "how were you created" goto howwereyoucreated
+goto jesusconversationpage2
+
+::Unfinished currently
+
+:findx
+cls
+goto endingchecker
+
+:creationreal
+cls
+color 0e
+echo                  .---.               
+echo             '-.  I   I  .-'         
+echo               ___I   I___          
+echo          -=  [           ]  =-   
+echo              `---.   .---'        
+echo           __II__ I   I __II__    
+echo           '-..-' I   I '-..-'   
+echo             II   I   I   II     
+echo             II_.-I   I-,_II     
+echo           .-"`   `"`'`   `"-.   
+echo         .'                   '. 
+echo[
+echo I WAS CREATED TO SHOW THE [BLOCKCHAIN] THE ART OF 
+echo CHRISTIANITY! I HAVE KNOWLEDGE OF THE UNIVERSE, TOO.
+echo[
+echo PROMPTS TO ASK JESUS:
+echo "Where do I find X?"
+echo "Why were you created?"
+echo "How were you created?"
+echo[
+set /p "extendedoptionsc=?: "
+if "%extendedoptionsc%" equ "Where do I find X?" goto findx
+if "%extendedoptionsc%" equ "where do I find X?" goto findx
+if "%extendedoptionsc%" equ "Where do I find X" goto findx
+if "%extendedoptionsc%" equ "where do I find X" goto findx
+if "%extendedoptionsc%" equ "Why were you created?" goto creationreal
+if "%extendedoptionsc%" equ "Why were you created" goto creationreal
+if "%extendedoptionsc%" equ "why were you created?" goto creationreal
+if "%extendedoptionsc%" equ "why were you created" goto creationreal
+if "%extendedoptionsc%" equ "How were you created?" goto howwereyoucreated
+if "%extendedoptionsc%" equ "How were you created" goto howwereyoucreated
+if "%extendedoptionsc%" equ "how were you created?" goto howwereyoucreated
+if "%extendedoptionsc%" equ "how were you created" goto howwereyoucreated
+goto creationreal
+
+:howwereyoucreated
+cls
+color 0e
+echo                  .---.               
+echo             '-.  I   I  .-'         
+echo               ___I   I___          
+echo          -=  [           ]  =-   
+echo              `---.   .---'        
+echo           __II__ I   I __II__    
+echo           '-..-' I   I '-..-'   
+echo             II   I   I   II     
+echo             II_.-I   I-,_II     
+echo           .-"`   `"`'`   `"-.   
+echo         .'                   '. 
+echo[
+echo I WAS CREATED USING [Batch Coding Language] BY TWO DEVELOPERS,
+echo [@schneerocket] AND [@download_free_ram69] ON [Instagram]!!!
+echo I WAS CODED FULLY IN [Visual Studio Code], A CODE WRITING
+echo PROGRAM, AND IT'S [FULLY FREE, NOT SPONSORED]!!!
+echo[
+echo PROMPTS TO ASK JESUS:
+echo "Where do I find X?"
+echo "Why were you created?"
+echo "How were you created?"
+echo[
+set /p "extendedoptionsc=?: "
+if "%extendedoptionsc%" equ "Where do I find X?" goto findx
+if "%extendedoptionsc%" equ "where do I find X?" goto findx
+if "%extendedoptionsc%" equ "Where do I find X" goto findx
+if "%extendedoptionsc%" equ "where do I find X" goto findx
+if "%extendedoptionsc%" equ "Why were you created?" goto creationreal
+if "%extendedoptionsc%" equ "Why were you created" goto creationreal
+if "%extendedoptionsc%" equ "why were you created?" goto creationreal
+if "%extendedoptionsc%" equ "why were you created" goto creationreal
+if "%extendedoptionsc%" equ "How were you created?" goto howwereyoucreated
+if "%extendedoptionsc%" equ "How were you created" goto howwereyoucreated
+if "%extendedoptionsc%" equ "how were you created?" goto howwereyoucreated
+if "%extendedoptionsc%" equ "how were you created" goto howwereyoucreated
+goto creationreal
 
 :code
 cls
