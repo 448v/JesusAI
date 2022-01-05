@@ -4,6 +4,8 @@
 ### Tons of hidden and extra content too
 ### Created by @download_free_ram69 and @schneerocket
 
+# **70% FINISHED**
+
 Made using state of the art blockchain technology. 
 Not affiliated with God, Jesus or The Bible in any way.
 
