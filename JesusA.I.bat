@@ -285,7 +285,7 @@ if "%cartridges%" equ "1" start "" "https://github.com/schneerocket/JesusAI-Cart
 if "%cartridges%" equ "2" call "BATCHNAME.bat"
 if "%cartridges%" equ "3" call "BATCHNAME.bat"
 if "%cartridges%" equ "4" call "BATCHNAME.bat"
-if "%cartridges%" equ "5" call "TestCartridge.bat"
+if "%cartridges%" equ "5" call %~dp0TestCartridge.bat
 if "%cartridges%" equ "6" goto menudeluxe
 goto cartridges
 
