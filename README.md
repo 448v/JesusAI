@@ -13,4 +13,4 @@ Contact us if you want to use the code.
 
 Original code by @download_free_ram69
 
-Alpha branch maintained frequently by @drezm0r
+Alpha branch maintained frequently by DREZMOR
