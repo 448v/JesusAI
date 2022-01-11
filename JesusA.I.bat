@@ -1,4 +1,4 @@
-::Alpha branch coded and maintained by @schneerocket on GitHub and Instagram
+::Alpha branch coded and maintained by DREZMOR on GitHub
 ::JesusAI runs best on Powershell, however it will load using Command Prompt too
 ::Found an issue? Report it at our repository: https://github.com/JesusAIexperience/JesusAI
 
@@ -58,7 +58,7 @@ echo The game has detected this is your first time running JesusAI.
 echo Please read our terms and conditions.
 echo[
 echo This game is not designed to offend in any way.
-echo All of JesusAI was created by two devs, @download_free_ram69 and @schneerocket.
+echo All of JesusAI was created by two devs, @download_free_ram69 and DREZMOR.
 echo This game in no way means to bash religion or its figures.
 echo[
 echo Please type anything to agree to these terms.
@@ -70,7 +70,7 @@ if "%terms%" equ "qweha8ds78dagdbahl2" exit
 goto endingchecker
 
 :menu
-color 0e
+color 0a
 cls
 echo  _____                                  ______  ______     
 echo /\___ \                                /\  _  \/\__  _\    
@@ -80,18 +80,17 @@ echo   /\ \_\ \/\  __//\__, `\ \ \_\ \/\__, `\\ \ \/\ \ \_\ \__
 echo   \ \____/\ \____\/\____/\ \____/\/\____/ \ \_\ \_\/\_____\
 echo    \/___/  \/____/\/___/  \/___/  \/___/   \/_/\/_/\/_____/
 echo[
-color 0e
-echo Welcome to the Alpha version of JesusAI.
+color 0a
+echo Welcome to JesusAI!
 echo Please select an option.
 echo 1. Start Experience
 echo 2. Close Experience
 echo 3. Open GitHub Repository Page
 echo 4. Credits
 echo[
-echo Copyright 2021 C0rp Industries
-echo Version: 0.01 (GitHub Development Build)
-echo Last update: 03/01/2022
-echo Happy new year!
+echo Copyright 2021 C0rp Studios
+echo Version: 0.01 (Indev Copy)
+echo Last update: 10/01/2022
 echo[
 echo This version is probably unstable.
 echo Expect random crashes or glitches.
@@ -110,7 +109,7 @@ if "%menu%" equ "1" goto jesusai
 goto menu
 
 :debugmenu
-color 0e
+color 0a
 cls
 echo  _____                                  ______  ______     
 echo /\___ \                                /\  _  \/\__  _\    
@@ -120,24 +119,23 @@ echo   /\ \_\ \/\  __//\__, `\ \ \_\ \/\__, `\\ \ \/\ \ \_\ \__
 echo   \ \____/\ \____\/\____/\ \____/\/\____/ \ \_\ \_\/\_____\
 echo    \/___/  \/____/\/___/  \/___/  \/___/   \/_/\/_/\/_____/
 echo[
-color 0e
+color 0a
 echo DEBUG OPTIONS ENABLED!
 echo Enter "disable.debug" to disable debug options.
 echo[
-echo Welcome to the Alpha version of JesusAI.
+echo Welcome to JesusAI!
 echo Please select an option.
 echo 1. Start Experience
 echo 2. Close Experience
 echo 3. Open GitHub Repository Page
 echo 4. Credits
 echo 5. (DEBUG) List Directories
-echo 6. (DEBUG) JesusAI Info
-echo 7. (DEBUG) Experimental Features
+echo 6. (DEBUG) Experimental Features
+echo 7. (DEV) Terminal
 echo[
-echo Copyright 2021 C0rp Industries
-echo Version: 0.01 (GitHub Development Build)
-echo Last update: 03/01/2022
-echo Happy new year!
+echo Copyright 2021 C0rp Studios
+echo Version: 0.01 (Indev Copy)
+echo Last update: 10/01/2022
 echo[
 echo This version is probably unstable.
 echo Expect random crashes or glitches.
@@ -149,8 +147,7 @@ if "%menudebug%" equ "calibrate" goto calibrate
 if "%menudebug%" equ "disable.debug" del "%temp%\debug.txt" & goto endingchecker
 if "%menudebug%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
 if "%menudebug%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
-if "%menudebug%" equ "7" goto experimental
-if "%menudebug%" equ "6" goto jesusinfo
+if "%menudebug%" equ "6" goto experimental
 if "%menudebug%" equ "5" goto directorylist
 if "%menudebug%" equ "4" goto credits
 if "%menudebug%" equ "3" start "" "https://github.com/JesusAIexperience/JesusAI"
@@ -159,7 +156,7 @@ if "%menudebug%" equ "1" goto jesusai
 goto debugmenu
 
 :menudeluxe
-color 0e
+color 0a
 cls
 echo  _____                                  ______  ______     
 echo /\___ \                                /\  _  \/\__  _\    
@@ -169,8 +166,8 @@ echo   /\ \_\ \/\  __//\__, `\ \ \_\ \/\__, `\\ \ \/\ \ \_\ \__
 echo   \ \____/\ \____\/\____/\ \____/\/\____/ \ \_\ \_\/\_____\
 echo    \/___/  \/____/\/___/  \/___/  \/___/   \/_/\/_/\/_____/
 echo[
-color 0e
-echo Welcome to the Alpha version of JesusAI.
+color 0a
+echo Welcome to JesusAI!
 echo Please select an option.
 echo 1. Start Experience
 echo 2. Close Experience
@@ -178,10 +175,9 @@ echo 3. Open GitHub Repository Page
 echo 4. Credits
 echo 5. Open Cartridges Menu (DLC)
 echo[
-echo Copyright 2021 C0rp Industries
-echo Version: 0.01 (GitHub Development Build)
-echo Last update: 03/01/2022
-echo Happy new year!
+echo Copyright 2021 C0rp Studios
+echo Version: 0.01 (Indev Copy)
+echo Last update: 10/01/2022
 echo[
 echo This version is probably unstable.
 echo Expect random crashes or glitches.
@@ -201,7 +197,7 @@ if "%menudeluxe%" equ "1" goto jesusai
 goto menu
 
 :debugmenudeluxe
-color 0e
+color 0a
 cls
 echo  _____                                  ______  ______     
 echo /\___ \                                /\  _  \/\__  _\    
@@ -211,11 +207,11 @@ echo   /\ \_\ \/\  __//\__, `\ \ \_\ \/\__, `\\ \ \/\ \ \_\ \__
 echo   \ \____/\ \____\/\____/\ \____/\/\____/ \ \_\ \_\/\_____\
 echo    \/___/  \/____/\/___/  \/___/  \/___/   \/_/\/_/\/_____/
 echo[
-color 0e
+color 0a
 echo DEBUG OPTIONS ENABLED!
 echo Enter "disable.debug" to disable debug options.
 echo[
-echo Welcome to the Alpha version of JesusAI.
+echo Welcome to JesusAI!
 echo Please select an option.
 echo 1. Start Experience
 echo 2. Close Experience
@@ -223,13 +219,12 @@ echo 3. Open GitHub Repository Page
 echo 4. Credits
 echo 5. Open Cartridges Menu (DLC)
 echo 6. (DEBUG) List Directories
-echo 7. (DEBUG) JesusAI Info
-echo 8. (DEBUG) Experimental Features
+echo 7. (DEBUG) Experimental Features
+echo 8. (DEV) Terminal
 echo[
-echo Copyright 2021 C0rp Industries
-echo Version: 0.01 (GitHub Development Build)
-echo Last update: 03/01/2022
-echo Happy new year!
+echo Copyright 2021 C0rp Studios
+echo Version: 0.01 (Indev Copy)
+echo Last update: 10/01/2022
 echo[
 echo This version is probably unstable.
 echo Expect random crashes or glitches.
@@ -241,8 +236,7 @@ if "%menudebugdeluxe%" equ "calibrate" goto calibrate
 if "%menudebugdeluxe%" equ "disable.debug" del "%temp%\debug.txt" & goto endingchecker
 if "%menudebugdeluxe%" equ "fuck you" start "" "https://i.imgur.com/SEhpuRg.jpg"
 if "%menudebugdeluxe%" equ "jesus" start "" https://i.imgur.com/DCtv3fR.gif
-if "%menudebugdeluxe%" equ "8" goto experimental
-if "%menudebugdeluxe%" equ "7" goto info
+if "%menudebugdeluxe%" equ "7" goto experimental
 if "%menudebugdeluxe%" equ "6" goto directorylist
 if "%menudebugdeluxe%" equ "5" goto cartridges
 if "%menudebugdeluxe%" equ "4" goto credits
@@ -254,7 +248,7 @@ goto debugmenudeluxe
 
 :cartridges
 cls
-title JesusAI (Infdev Build)
+title JesusAI (Dev Build)
 color 0c
 echo                       __                   __                           
 echo                      /\ \__         __    /\ \                          
@@ -282,11 +276,20 @@ echo 5. Run Cartridge 0
 echo 6. Go Back to Main Menu
 set /p "cartridges=Selected option: "
 if "%cartridges%" equ "1" start "" "https://github.com/schneerocket/JesusAI-Cartridges"
-if "%cartridges%" equ "2" call "BATCHNAME.bat"
-if "%cartridges%" equ "3" call "BATCHNAME.bat"
-if "%cartridges%" equ "4" call "BATCHNAME.bat"
-if "%cartridges%" equ "5" call %~dp0TestCartridge.bat
+if "%cartridges%" equ "2" call %~dp0Cartridge 1.bat
+if "%cartridges%" equ "3" call %~dp0Cartridge 2.bat
+if "%cartridges%" equ "4" goto cartridge3
+if "%cartridges%" equ "5" goto cartridges
 if "%cartridges%" equ "6" goto menudeluxe
+goto cartridges
+
+:cartridge3
+cls
+echo Test successful
+cd %temp%
+echo .> CARTRIDGECHECKER.txt
+cd %localhost%
+call "%~dp0Cartridge 3.bat"
 goto cartridges
 
 :repent
@@ -358,6 +361,7 @@ echo[
 echo More features will be added soon (maybe).
 echo You can also type anything else to go back to the menu.
 set /p "experimental=Activate feature: "
+if "%experimental%" equ "3" goto areyousure3
 if "%experimental%" equ "2" goto areyousure2
 if "%experimental%" equ "1" goto areyousure1
 goto debugmenu
@@ -389,6 +393,49 @@ if "%areyousure2%" equ "y" goto reallysure2
 if "%areyousure2%" equ "N" goto experimental
 if "%areyousure2%" equ "n" goto experimental
 goto areyousure2
+
+:areyousure3
+cls
+echo Are you sure you want to reset your save data?
+echo This will delete all your ending files, intro configuration file,
+echo secret files and more. Only do this if you want to replay the game.
+echo Respond with Y to reset save data, or N to return to the Experimental Features menu.
+set /p "areyousure3=?: " 
+if "%areyousure3%" equ "Y" goto reallysure3
+if "%areyousure3%" equ "y" goto reallysure3
+if "%areyousure3%" equ "N" goto experimental
+if "%areyousure3%" equ "n" goto experimental
+goto areyousure3
+
+:reallysure3
+cls
+echo Are you REALLY sure you want to reset your save data?
+echo You will not be able to get it back without restarting the entire game.
+echo This is your last chance to go back.
+echo Respond with Y to reset save data, or N to return to the Experimental Features menu.
+set /p "reallysure3=?: "
+if "%reallysure3%" equ "Y" goto resetsavedata
+if "%reallysure3%" equ "y" goto resetsavedata
+if "%reallysure3%" equ "N" goto experimental
+if "%reallysure3%" equ "n" goto experimental
+goto reallysure3
+
+:resetsavedata
+cd %temp%
+del "%temp%\verify.txt"
+del "%temp%\ending1.txt"
+del "%temp%\ending2.txt"
+del "%temp%\ending3.txt"
+del "%temp%\debug.txt"
+goto completed3
+
+:completed3
+cls
+echo Save data deleted.
+echo Press anything to exit JesusAI.
+set /p "completed3=?: "
+if "%completed3%" equ "uh0sefuisdhf8w3yh45jh2b4h2u421u" goto fnnlf
+exit
 
 :reallysure2
 cls
@@ -532,25 +579,45 @@ goto directorylist
 
 :credits
 cls
-echo                       __      __             
-echo                      /\ \  __/\ \__          
-echo   ___   _ __    __   \_\ \/\_\ \ ,_\   ____  
-echo  /'___\/\`'__\/'__`\ /'_` \/\ \ \ \/  /',__\ 
-echo /\ \__/\ \ \//\  __//\ \L\ \ \ \ \ \_/\__, `\
-echo \ \____\\ \_\\ \____\ \___,_\ \_\ \__\/\____/
-echo  \/____/ \/_/ \/____/\/__,_ /\/_/\/__/\/___/ 
+echo                   .@% .@@                                        
+echo                     .@@                                          
+echo             *@% .@% .@@  @@  @@                                  
+echo             .(#@@@@@@@@@@@@@@((                                  
+echo               ,@@@@@@@@@@@@@@                                    
+echo                 .@@@@@@@@@@                                      
+echo                 .@@@@@@@@@@                                      
+echo                .*@@@@@@@@@@..                                    
+echo           /@@@@@@@@@@@@@@@@@@@@@@                                
+echo               ,@@@@@@@@@@@@@@                                    
+echo               ,@@@@@@@@@@@@@@                                    
+echo @@@@/         ,@@@@@@@@@@@@@@                                    
+echo @@@@/ (@@@@@@@@@@@@@@@@@@@@@@            @@            @@@@,     
+echo @@* (@/ (@( *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      @@@@@@        
+echo @@@@/ (@* /@# ,@@@@@@@@@@@@@@  @@  @@  @@  @@@@@@@@@@  @@@@,     
+echo @@* (@/ (@( *@@@@@@@@@@@@@@@@@@  @@  @@@@              @@    %@, 
+echo @@%(///(///((/(@@@@@@@@@@@@@@//((//((//@@              @@((((@@#(
+echo @@@@/ (@/ /@# ,@@@@@@@@@@@@@@  @@  @@  @@  @@@@@@@@@@  @@@@,     
+echo @@* (@/ (@( *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      @@@@@@        
+echo @@@@/ (@@@@@@@@@@@@@@@@@@@@@@@@          @@            @@@@,     
+echo @@@@@@@@@@/ *@@@@@@@@@@@@@@@@@@          @@                      
+echo           /@@@@@@@@@@@@@@@@@@@@@@                                
+echo           /@@@@@@@@@@@@@@@@@@@@@@                                
+echo           /@@@@@@@@@@@@@@@@@@@@@@                                
+echo         (@@@@@@@@@@@@@@@@@@@@@@@@@@                                                             
 echo[
-echo Created by C0rp Industries
-echo Code written by @schneerocket and @download_free_ram69 on Instagram
-echo Project concept established in Late 2019 as a joke
+echo JesusAI - Created by C0rp Studios
+echo Programming by DREZMOR and @download_free_ram69
+echo Entirely written via Batch in Virtual Studio Code
+echo Project concept established in Late 2019 as an inside joke between friends
 echo Project fully started in December 2021
 echo Repository hosted on GitHub
-echo Thanks StackOverflow
+echo Thanks StackOverflow (for helping fix so many things)
 echo[
-echo Type "back" to go back.
-set /p "credits=Response: "
+echo Type anything to go back.
+set /p "credits=?: "
 if "%credits%" equ "unlock" goto oldmenu
-if "%credits%" equ "back" goto endingchecker
+if "%credits%" equ "bhfbhdfohbob324ohihatejewsbhshui" exit
+goto endingchecker
 
 :oldmenu
 color 0a
@@ -559,7 +626,7 @@ echo Jesus A.I
 echo The first ever build / original edition
 echo Slightly optimized and modified to work properly
 echo Originally by @download_free_ram69
-echo Recoded and patched in by @schneerocket
+echo Recoded and patched in by DREZMOR
 echo[
 echo Please pick an option
 echo 1. Start Experience
@@ -681,32 +748,6 @@ echo You can type anything to go back up to the menu.
 set /p "oldhello=?: "
 if "%oldhello%" equ "saehiodfisafo891234" exit
 goto oldmenu
-
-:jesusinfo
-cls
-echo                ___         
-echo  __          /'___\        
-echo /\_\    ___ /\ \__/  ___   
-echo \/\ \ /' _ `\ \ ,__\/ __`\ 
-echo  \ \ \/\ \/\ \ \ \_/\ \L\ \
-echo   \ \_\ \_\ \_\ \_\\ \____/
-echo    \/_/\/_/\/_/\/_/ \/___/ 
-echo[
-echo JesusAI's current directory is:
-echo %CD%
-echo[
-echo The current date and time the program is being run on is:
-echo %date% %time%
-echo[
-echo This copy of JesusAI's version is:
-echo 0.01 (GitHub Development Build)
-echo Last update: 03/01/2022
-echo Happy new year!
-echo Type "back" to go back.
-echo[
-set /p "jesusinfo2=Selected option: "
-if "%jesusinfo2%" equ "back" goto endingchecker
-goto jesusinfo
 
 :judgement
 cls
@@ -846,7 +887,7 @@ goto jesusai
 
 :whoareyou
 cls
-color 0e
+color 0a
 echo                  .---.               
 echo             '-.  I   I  .-'         
 echo               ___I   I___          
@@ -891,7 +932,7 @@ goto whoareyou
 
 :whatisjesusai
 cls
-color 0e
+color 0a
 echo                  .---.               
 echo             '-.  I   I  .-'         
 echo               ___I   I___          
@@ -905,7 +946,7 @@ echo           .-"`   `"`'`   `"-.
 echo         .'                   '. 
 echo[
 echo [JesusAI] IS THE CREATION OF TWO [HOT, SINGLE]
-echo DEVELOPERS, [@schneerocket] AND [@download_free_ram69].
+echo DEVELOPERS, [DREZMOR] AND [@download_free_ram69].
 echo THE MAIN GOAL WAS TO CREATE AN [ATTRACTIVE] VERISON
 echo OF [Jesus Christ], FULLY EXECUTABLE FROM YOUR [Personal Computer]!
 echo ANYTHING ELSE YOU'D LIKE TO ASK, [Markiplier]?
@@ -949,7 +990,7 @@ exit
 
 :hello
 cls 
-color 0e
+color 0a
 echo                  .---.               
 echo             '-.  I   I  .-'         
 echo               ___I   I___          
@@ -998,7 +1039,7 @@ goto hello
 
 :jesusconversationpage1
 cls
-color 0e
+color 0a
 echo                  .---.               
 echo             '-.  I   I  .-'         
 echo               ___I   I___          
@@ -1025,7 +1066,7 @@ goto jesusconversationpage1
 
 :jesusconversationpage2
 cls
-color 0e
+color 0a
 echo                  .---.               
 echo             '-.  I   I  .-'         
 echo               ___I   I___          
@@ -1046,8 +1087,13 @@ echo PROMPTS TO ASK JESUS:
 echo "Where do I find X?"
 echo "Why were you created?"
 echo "How were you created?"
+echo "Go back."
 echo[
 set /p "extendedoptions=?: "
+if "%extendedoptions%" equ "Go back." goto jesusai
+if "%extendedoptions%" equ "Go back" goto jesusai
+if "%extendedoptions%" equ "go back." goto jesusai
+if "%extendedoptions%" equ "go back" goto jesusai
 if "%extendedoptions%" equ "Where do I find X?" goto findx
 if "%extendedoptions%" equ "where do I find X?" goto findx
 if "%extendedoptions%" equ "Where do I find X" goto findx
@@ -1066,7 +1112,7 @@ goto jesusconversationpage2
 
 :findx
 cls
-color 0e
+color 0a
 echo                  .---.               
 echo             '-.  I   I  .-'         
 echo               ___I   I___          
@@ -1092,7 +1138,7 @@ if "%findx%" equ "don't worry about it" goto findx2
  
 :creationreal
 cls
-color 0e
+color 0a
 echo                  .---.               
 echo             '-.  I   I  .-'         
 echo               ___I   I___          
@@ -1130,7 +1176,7 @@ goto creationreal
 
 :howwereyoucreated
 cls
-color 0e
+color 0a
 echo                  .---.               
 echo             '-.  I   I  .-'         
 echo               ___I   I___          
@@ -1144,7 +1190,7 @@ echo           .-"`   `"`'`   `"-.
 echo         .'                   '. 
 echo[
 echo I WAS CREATED USING [Batch Coding Language] BY TWO DEVELOPERS,
-echo [@schneerocket] AND [@download_free_ram69] ON [Instagram]!!!
+echo [DREZMOR] AND [@download_free_ram69] ON [Instagram]!!!
 echo I WAS CODED FULLY IN [Visual Studio Code], A CODE WRITING
 echo PROGRAM, AND IT'S [FULLY FREE, NOT SPONSORED]!!!
 echo[
